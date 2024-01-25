@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !=/index.php
+#RewriteCond %{REQUEST_URI} !.*\controllers$ [NC]   
+#RewriteCond %{REQUEST_URI} !.*\database$ [NC]
+#RewriteCond %{REQUEST_URI} !.*\404$ [NC]
+#RewriteCond %{REQUEST_URI} !.*\misc$ [NC]
+RewriteRule .* index.php
