@@ -2,6 +2,6 @@
 
     static $username = "root";
     static $password = "";
-    static $database = "tz_clients";
+    static $database = "itpl_app";
     
 ?>

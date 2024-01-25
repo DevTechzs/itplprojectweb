@@ -7,9 +7,9 @@ use \PDO;
 class DBController
 {
 	static $servername = "localhost:3306";
-	static $username = "root";
-	static $password = "";
-	static $database = "tz_clients";
+	// static $username = "root";
+	// static $password = "";
+	// static $database = "tz_clients";
 	static $conn = false;
 
 	/*
@@ -17,9 +17,9 @@ class DBController
 	*/
 	static function init()
 	{
-		// require_once('DBcredentials.php');
+		require_once('DBcredentials.php');
 		if (self::$conn === false) {
-			self::$conn = new PDO("mysql:host=" . self::$servername.";dbname=" .self::$database,self::$username,self:: $password);
+			self::$conn = new PDO("mysql:host=" . self::$servername.";dbname=" .$database,$username, $password);
 			self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 	}
