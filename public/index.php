@@ -223,6 +223,9 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
             exit;
             break;
 
+
+            
+
         default:
             header("Content-type: */*;");
             header('HTTP/2 404 Not Found'); //This may be put inside 404.php instead
