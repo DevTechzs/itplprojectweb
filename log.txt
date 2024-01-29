@@ -1,0 +1,345 @@
+
+
+29-01-24 04:58:26 : {"JSON":"","Page_key":""}
+
+29-01-24 04:58:26 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 04:58:26 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 04:58:26 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 04:58:49 : {"JSON":"","Page_key":""}
+
+29-01-24 04:58:49 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 04:58:49 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 04:58:49 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 04:59:05 : {"JSON":"","Page_key":""}
+
+29-01-24 04:59:05 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 04:59:05 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 04:59:05 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 04:59:26 : {"JSON":"","Page_key":""}
+
+29-01-24 04:59:30 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 04:59:30 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 04:59:30 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:00:16 : {"JSON":"","Page_key":""}
+
+29-01-24 05:00:16 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:00:16 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:00:16 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:00:22 : {"JSON":"","Page_key":""}
+
+29-01-24 05:00:25 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:00:25 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:00:25 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:08:06 : {"JSON":"","Page_key":""}
+
+29-01-24 05:08:06 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:08:06 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:08:06 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:08:08 : {"JSON":"","Page_key":""}
+
+29-01-24 05:09:15 : {"JSON":"","Page_key":""}
+
+29-01-24 05:09:17 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:09:17 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:09:17 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:09:20 : {"JSON":"","Page_key":""}
+
+29-01-24 05:09:20 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:09:20 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:09:20 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:09:22 : {"JSON":"","Page_key":""}
+
+29-01-24 05:09:44 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:16 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:18 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:18 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:10:18 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:10:18 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:10:19 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:20 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:21 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:21 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:21 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:22 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:22 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:22 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:22 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:42 : {"JSON":"","Page_key":""}
+
+29-01-24 05:10:59 : {"JSON":"","Page_key":""}
+
+29-01-24 05:11:03 : {"JSON":"","Page_key":""}
+
+29-01-24 05:11:05 : {"JSON":"","Page_key":""}
+
+29-01-24 05:11:20 : {"JSON":"","Page_key":""}
+
+29-01-24 05:11:39 : {"JSON":"","Page_key":""}
+
+29-01-24 05:13:08 : {"JSON":"","Page_key":""}
+
+29-01-24 05:13:14 : {"JSON":"","Page_key":""}
+
+29-01-24 05:13:35 : {"JSON":"","Page_key":""}
+
+29-01-24 05:13:39 : {"JSON":"","Page_key":""}
+
+29-01-24 05:13:56 : {"JSON":"","Page_key":""}
+
+29-01-24 05:13:58 : {"JSON":"","Page_key":""}
+
+29-01-24 05:14:53 : {"JSON":"","Page_key":""}
+
+29-01-24 05:14:54 : {"JSON":"","Page_key":""}
+
+29-01-24 05:16:41 : {"JSON":"","Page_key":""}
+
+29-01-24 05:16:43 : {"JSON":"","Page_key":""}
+
+29-01-24 05:16:43 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:16:43 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:16:43 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:16:45 : {"JSON":"","Page_key":""}
+
+29-01-24 05:16:46 : {"JSON":"","Page_key":""}
+
+29-01-24 05:17:25 : {"JSON":"","Page_key":""}
+
+29-01-24 05:17:26 : {"JSON":"","Page_key":""}
+
+29-01-24 05:17:30 : {"JSON":"","Page_key":""}
+
+29-01-24 05:17:49 : {"JSON":"","Page_key":""}
+
+29-01-24 05:17:51 : {"JSON":"","Page_key":""}
+
+29-01-24 05:18:17 : {"JSON":"","Page_key":""}
+
+29-01-24 05:18:19 : {"JSON":"","Page_key":""}
+
+29-01-24 05:18:19 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:18:19 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:18:19 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:18:24 : {"JSON":"","Page_key":""}
+
+29-01-24 05:18:37 : {"JSON":"","Page_key":""}
+
+29-01-24 05:18:40 : {"JSON":"","Page_key":""}
+
+29-01-24 05:18:40 : {"JSON":"","Page_key":""}
+
+29-01-24 05:18:41 : {"JSON":"","Page_key":""}
+
+29-01-24 05:18:42 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:16 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:17 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:18 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:21 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:25 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:25 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:27 : {"Module":"auth","Page_key":"Login","JSON":{"Username":"admin","Password":"123"},"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:19:27 : Reached request Login
+
+29-01-24 05:19:27 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:27 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:19:27 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:19:27 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:19:28 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:29 : {"JSON":"","Page_key":""}
+
+29-01-24 05:19:33 : {"JSON":"","Page_key":""}
+
+29-01-24 05:20:02 : {"JSON":"","Page_key":""}
+
+29-01-24 05:20:03 : {"JSON":"","Page_key":""}
+
+29-01-24 05:20:04 : {"JSON":"","Page_key":""}
+
+29-01-24 05:21:45 : {"JSON":"","Page_key":""}
+
+29-01-24 05:21:46 : {"Module":"Products","Page_key":"getProducts","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:21:54 : {"JSON":"","Page_key":""}
+
+29-01-24 05:21:54 : {"JSON":"","Page_key":""}
+
+29-01-24 05:21:56 : {"Module":"auth","Page_key":"Login","JSON":{"Username":"admin","Password":"123"},"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:21:56 : Reached request Login
+
+29-01-24 05:21:56 : {"JSON":"","Page_key":""}
+
+29-01-24 05:21:56 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:21:56 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:21:56 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:21:58 : {"JSON":"","Page_key":""}
+
+29-01-24 05:21:58 : {"Module":"Products","Page_key":"getProducts","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:21:59 : {"JSON":"","Page_key":""}
+
+29-01-24 05:21:59 : {"JSON":"","Page_key":""}
+
+29-01-24 05:22:12 : {"Module":"auth","Page_key":"Login","JSON":{"Username":"admin","Password":"123"},"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:22:12 : Reached request Login
+
+29-01-24 05:22:12 : {"JSON":"","Page_key":""}
+
+29-01-24 05:22:12 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:22:12 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:22:12 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:22:13 : {"JSON":"","Page_key":""}
+
+29-01-24 05:22:13 : {"Module":"Settings","Page_key":"getAllvisitedUserInaDay","JSON":[],"MSC":"6ea9ab1baa0efb9e19094440c317e21b"}
+
+29-01-24 05:22:13 : SELECT count(*) as totalApplicants FROM `Prayagedu_Applicants` where isActive=1 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_applicants' doesn't exist
+
+29-01-24 05:22:13 : SELECT count(*)  as totalActive FROM `Prayagedu_Careers` where isActive=1; 
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl_test.prayagedu_careers' doesn't exist
+
+29-01-24 05:22:14 : {"JSON":"","Page_key":""}
+
+29-01-24 05:22:15 : {"JSON":"","Page_key":""}
+
+29-01-24 05:25:45 : {"JSON":"","Page_key":""}
+
+29-01-24 05:27:54 : {"JSON":"","Page_key":""}
+
+29-01-24 05:28:15 : {"JSON":"","Page_key":""}
+
+29-01-24 05:29:13 : {"JSON":"","Page_key":""}
+
+29-01-24 05:29:19 : {"JSON":"","Page_key":""}
+
+29-01-24 05:29:34 : {"JSON":"","Page_key":""}

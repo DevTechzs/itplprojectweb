@@ -49,12 +49,10 @@ use app\misc\MSC;
 use app\misc\IPLogger;
 use app\database\DBController;
 use app\modules\auth\classes\Password;
-use app\modules\clients\ClientController;
 use app\modules\filemanager\FileController;
 use app\modules\settings\SettingController;
-use app\modules\products\ProductsController;
-use app\modules\supports\SupportController;
-use app\modules\supportTicket\SupportTicketController;
+use app\modules\project\ProjectController;
+
 //newly added
 use app\modules\careers\CareerController;
 use app\modules\supportTicket\classes\SupportTicket;
@@ -98,12 +96,6 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
                 $result = (new SettingController())->Route($data);
                 break;
 
-            case "Client":
-                $result = (new ClientController())->Route($data);
-                break;
-            case "Products":
-                $result = (new ProductsController())->Route($data);
-                break;
 
             case "Auth":
                 $result = (new AuthenticationController())->Route($data);
@@ -113,10 +105,11 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
                 $result = (new CareerController())->Route($data);
                 break;
 
-
-            case "SupportTicket":
-                $result = (new SupportTicketController())->Route($data);
+            case "Project":
+                $result = (new ProjectController())->Route($data);
                 break;
+
+
 
             case "Staff": //added by dev on 19/01/24
                 $result = (new StaffController())->Route($data);
@@ -143,7 +136,7 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
 
             case "Auth":
 
-            
+
                 $result = (new AuthenticationController())->Route($data);
                 break;
 
@@ -181,12 +174,7 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
             load(VIEWPATH . "/dashboard.php");
             break;
 
-        case "clients":
-            ClientController::Views($page);
-            break;
-        case "products":
-            ProductsController::Views($page);
-            break;
+
         case "file":
             FileController::File();
             break;
@@ -199,21 +187,20 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
             CareerController::Views($page);
             break;
 
+
+        case "project":
+            ProjectController::Views($page);
+            break;
+
+
         case "changepassword":
             load("../app/views/admin/changepassword.php");
             break;
 
 
-        case "supports":
-            SupportController::Views($page);
-            break;
-
-        case "supportTicket":
-            SupportTicketController::Views($page);
-            break;
 
         case "staff":
-            StaffController::Views($page); //added by dev on 19/01/24
+            StaffController::Views($page);
             break;
 
         case "logout":
@@ -225,7 +212,7 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
 
 
 
-            
+
 
 
 
