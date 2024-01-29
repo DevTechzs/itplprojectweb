@@ -1,9 +1,11 @@
 <?php
-namespace app\modules\supports;
-use app\core\Controller;
-use app\modules\supports\classes\Support;
 
-class SupportController implements Controller
+namespace app\modules\employee;
+
+use app\core\Controller;
+use app\modules\employee\classes\Employee;
+
+class EmployeeController implements Controller
 {
 
     public function Route($data)
@@ -11,12 +13,16 @@ class SupportController implements Controller
         $jsondata = $data["JSON"];
 
         switch ($data["Page_key"]) {
-          
-            case 'sendotp':
-                return (new Support())->sentotp($jsondata);
 
-            // case "getDataFromAPI":
-            //      return (new Support())->getDataFromAPI($jsondata);
+
+            case "employee":
+                return (new Employee())->getallEmployees($jsondata);
+
+                // case 'sendotp':
+                //     return (new Support())->sentotp($jsondata);
+
+                // case "getDataFromAPI":
+                //      return (new Support())->getDataFromAPI($jsondata);
 
 
             default:
@@ -27,16 +33,16 @@ class SupportController implements Controller
         }
     }
 
-   
+
     static function Views($page)
     {
 
-        $viewpath = "../app/modules/supports/views/";
+        $viewpath = "../app/modules/employee/views/";
 
         switch ($page[1]) {
 
-            case 'support':
-                load($viewpath . "sendlinkforpassswordreset.php");
+            case 'EmployeesList':
+                load($viewpath . "list.php");
                 break;
 
             default:

@@ -16,9 +16,7 @@ header("Content-type: text/html; charset=UTF-8");
 header('Cache-Control: max-age=86400');
 header('HTTP/2 200 Success');
 header("Status: 200");
-header("Server: MAC_OS_X");
-header("X-Powered-By: Python");
-header("Developer: Monoj Das");
+
 date_default_timezone_set('Asia/Kolkata');
 
 // set to the user defined error handler
@@ -48,7 +46,7 @@ use app\modules\auth\AuthenticationController;
 use app\misc\MSC;
 use app\misc\IPLogger;
 use app\database\DBController;
-use app\modules\supports\SupportController;
+use app\modules\employee\EmployeeController;
 
 if (!isset($data["JSON"])) {
     $data["JSON"] = "";
@@ -83,14 +81,10 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
 
         switch ($data["Module"]) {
 
-            
+
             case "Auth":
                 $result = (new AuthenticationController())->Route($data);
                 break;
-
-
-
-
 
             default:
                 $result = array("return_code" => false, "return_data" => array("Module key not found"));
@@ -106,15 +100,20 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
 
         switch ($data["Module"]) {
 
-          
+
 
             case "Auth":
                 $result = (new AuthenticationController())->Route($data);
                 break;
-            case "Client":
-                if ($data["Page_key"] = "getClientsByProductCode")
-                    // $result = (new \app\modules\clients\classes\Client())->getClientsByProductCode($data["JSON"]);
-                    break;
+
+
+
+            case "employees":
+
+                $result = (new EmployeeController())->Route($data);
+
+                break;
+
             default:
                 $result = (new AuthenticationController)->Route($data);
                 break;
@@ -151,8 +150,8 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
             break;
 
 
-        case "supports":
-            SupportController::Views($page);
+        case "employees":
+            EmployeeController::Views($page);
             break;
 
 
@@ -214,7 +213,7 @@ function publicRequest($query_array)
             case "login":
                 load(VIEWPATH . "/login.php");
                 break;
-            case "test123":
+            case "test":
                 load(VIEWPATH . "/test.php");
                 break;
 

@@ -35,7 +35,7 @@ CREATE TABLE `iplogging` (
   `DATA` text NOT NULL,
   `AccessTime` timestamp NOT NULL DEFAULT current_timestamp(),
   `SessionID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 --
 -- Dumping data for table `iplogging`
@@ -5482,7 +5482,7 @@ CREATE TABLE `logindetails` (
   `isSuccessfull` bit(1) NOT NULL DEFAULT b'0',
   `isActive` bit(1) NOT NULL DEFAULT b'0',
   `SessionID` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 --
 -- Dumping data for table `logindetails`
@@ -5520,7 +5520,7 @@ CREATE TABLE `users` (
   `CreatedDateTime` timestamp NOT NULL DEFAULT current_timestamp(),
   `FCMToken` text DEFAULT NULL,
   `SessionID` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 --
 -- Dumping data for table `users`
