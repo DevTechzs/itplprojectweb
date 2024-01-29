@@ -7,6 +7,7 @@ class Login
     function requestLogin($data)
     {
 
+        DBController::logs("Reached request Login");
         $params = array(
             array(":Username", $data["Username"]),
             array(":Password", hash("sha256", substr($data["Username"], 0, 1) . $data["Password"]))
