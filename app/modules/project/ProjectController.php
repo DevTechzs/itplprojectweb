@@ -36,7 +36,7 @@ class ProjectController implements Controller
         switch ($page[1]) {
 
             case 'List':
-                load($viewpath . "list.php");
+                load($viewpath . "showProject.php");
                 break;
 
             case 'addproject':
