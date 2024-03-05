@@ -52,9 +52,10 @@ use app\modules\auth\classes\Password;
 use app\modules\filemanager\FileController;
 use app\modules\settings\SettingController;
 use app\modules\project\ProjectController;
-
+use app\modules\performance\PerformanceController;
 //newly added
 use app\modules\careers\CareerController;
+use app\modules\performance\classes\Performance;
 use app\modules\supportTicket\classes\SupportTicket;
 use app\modules\staff\StaffController; //added by dev on 19/01/24
 
@@ -109,7 +110,9 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
                 $result = (new ProjectController())->Route($data);
                 break;
 
-
+            case "Performance":
+                $result = (new PerformanceController())->Route($data);
+                break;
 
             case "Staff": //added by dev on 19/01/24
                 $result = (new StaffController())->Route($data);
@@ -190,6 +193,10 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
 
         case "project":
             ProjectController::Views($page);
+            break;
+
+        case "performance":
+            PerformanceController::Views($page);
             break;
 
 
@@ -331,32 +338,32 @@ function myErrorHandler($errno, $errstr, $errfile, $errline)
     switch ($errno) {
         case E_USER_ERROR:
             $errormessage .= "<b>My ERROR</b> [$errno] $errstr\n";
-            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .=  "Aborting...<br />\n";
+            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .= "Aborting...<br />\n";
             DBController::logs($errormessage);
             exit(1);
 
         case E_USER_WARNING:
-            $errormessage .=  "<b>My WARNING</b> [$errno] $errstr<br />\n";
-            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .=  "Aborting...<br />\n";
+            $errormessage .= "<b>My WARNING</b> [$errno] $errstr<br />\n";
+            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .= "Aborting...<br />\n";
             break;
 
         case E_USER_NOTICE:
-            $errormessage .=  "<b>My NOTICE</b> [$errno] $errstr<br />\n";
-            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .=  "Aborting...<br />\n";
+            $errormessage .= "<b>My NOTICE</b> [$errno] $errstr<br />\n";
+            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .= "Aborting...<br />\n";
             break;
         case E_ERROR:
-            $errormessage .=  "<b>File missing</b> [$errno] $errstr<br />\n";
-            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .=  "Aborting...<br />\n";
+            $errormessage .= "<b>File missing</b> [$errno] $errstr<br />\n";
+            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .= "Aborting...<br />\n";
             break;
 
         default:
-            $errormessage .=  "Unknown error type: [$errno] $errstr<br />\n";
-            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .=  "Aborting...<br />\n";
+            $errormessage .= "Unknown error type: [$errno] $errstr<br />\n";
+            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .= "Aborting...<br />\n";
 
             DBController::logs($errormessage);
             exit(1);

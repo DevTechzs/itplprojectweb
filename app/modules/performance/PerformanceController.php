@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\project;
+namespace app\modules\performance;
 
 use app\core\Controller;
-use app\modules\project\classes\Project;
+use app\modules\performance\classes\Performance;
 
-class ProjectController implements Controller
+class PerformanceController implements Controller
 {
 
     public function Route($data)
@@ -13,12 +13,11 @@ class ProjectController implements Controller
         $jsondata = $data["JSON"];
 
         switch ($data["Page_key"]) {
+            case "showPerformance":
+                return (new Performance())->showPerformance($jsondata);
 
-
-
-            case 'addTask':
-                return (new Project())->addTask($jsondata);
-
+            case "departmentPerformance":
+                return (new Performance())->showPerformance($jsondata);
 
             default:
                 header('HTTP/1.1 401  Unauthorized Access');
@@ -31,18 +30,20 @@ class ProjectController implements Controller
     public static function Views($page)
     {
 
-        $viewpath = "../app/modules/project/views/";
+        $viewpath = "../app/modules/performance/views/";
 
         switch ($page[1]) {
 
-            case 'showProject':
-                load($viewpath . "showProject.php");
+            case 'employeePerformance':
+                load($viewpath . "showPerformance.php");
+                break;
+            case 'individualPerformance':
+                load($viewpath . "individualPerformance.php");
                 break;
 
-            case 'list':
-                load($viewpath . "projectList.php");
+            case 'departmentPerformance':
+                load($viewpath . "departmentPerformance.php");
                 break;
-
 
             default:
                 // session_destroy();

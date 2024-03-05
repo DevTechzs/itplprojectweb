@@ -1,0 +1,35 @@
+.progress-container {
+  margin-bottom: 10px;
+}
+
+.card {
+  background-color: rgb(30 41 59);
+  color: aliceblue;
+  box-shadow: 10px 10px 10px rgb(73, 72, 72);
+  margin: 10px;
+}
+
+.card-body {
+  display: grid;
+}
+
+.default-avatar,
+.member-overlap-item {
+  height: 30px;
+  width: 30px;
+}
+
+.member-overlap-item {
+  margin-right: -10px;
+}
+
+#team-icons {
+  display: flex;
+  margin: 10px;
+}
+
+#addProjectForm {
+  background-color: aliceblue;
+  padding: 10px;
+  max-width: 500px;
+}

@@ -1,33 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap");
 
-.main-container {
-  margin: 0;
-  display: grid;
-  grid-template-columns: 0.7fr 1fr 1.5fr;
-  gap: 20px;
-  font-family: "Quicksand", sans-serif;
-  padding: 20px;
-  color: #fff;
-}
-.main-container > div {
-  background-color: rgb(30 41 59);
-  border-radius: 30px;
-  height: auto;
-  width: auto;
-  padding: 20px;
+#maincontent {
+  overflow-x: hidden;
 }
 
+.main-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px;
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+}
+.main-container > div {
+  flex: 1;
+  background-color: rgb(30 41 59);
+  border-radius: 15px;
+  width: auto;
+  padding: 15px;
+}
+
+/* Media queries for smaller screens */
 @media screen and (max-width: 1500px) {
   .main-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px; /* Adjust the gap for smaller screens */
-    padding: 15px; /* Adjust padding for smaller screens */
+    justify-content: flex-start; /* Or adjust as needed */
+    gap: 15px;
+    padding: 15px;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .main-container {
-    grid-template-columns: 1fr;
+    justify-content: center; /* Or adjust as needed */
+    gap: 10px;
     padding: 10px;
   }
 }
@@ -35,58 +42,58 @@
 /* Additional media queries for smaller screens */
 @media screen and (max-width: 900px) {
   .main-container {
-    grid-template-columns: 1fr;
-    gap: 10px; /* Adjust the gap for even smaller screens */
-    padding: 5px; /* Adjust padding for even smaller screens */
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .main-container {
-    grid-template-columns: 1fr;
-    gap: 5px; /* Adjust the gap for very small screens */
+    justify-content: center; /* Or adjust as needed */
+    gap: 5px;
     padding: 5px;
   }
 }
 
+@media screen and (max-width: 600px) {
+  .main-container > div {
+    flex-basis: 100%;
+  }
+  .main-container {
+    justify-content: center; /* Or adjust as needed */
+    gap: 5px;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container > div {
+    flex-basis: calc(50% - 10px); /* Two items in a row with some gap */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-container > div {
+    flex-basis: calc(50% - 5px); /* Two items in a row with smaller gap */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main-container > div {
+    flex-basis: 100%; /* One item in a row */
+  }
+}
+
 .first-child-1 {
-  overflow: hidden;
+  padding: 20px;
 }
 .project-title {
-  font-size: 40px;
+  font-size: 20px;
   margin: 10px;
   font-weight: 800;
 }
 .about {
-  font-size: 20px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 100;
   margin: 10px;
 }
 
 .modal-body {
   color: black;
 }
-
-/* .planning-bar {
-  padding: 0;
-}
-
-.knob {
-  width: 49px;
-  height: 30px;
-  position: absolute;
-  vertical-align: middle;
-  margin-top: 30px;
-  margin-left: -69px;
-  border: 0;
-  background: none;
-  font: bold 18px Arial;
-  text-align: center;
-  color: rgb(255, 166, 90);
-  padding: 0;
-  appearance: none;
-} */
-
 /* main progress bar */
 .graph {
   width: 200px;
@@ -216,19 +223,19 @@
 
 @keyframes planning-animate {
   100% {
-    stroke-dashoffset: 100;
+    stroke-dashoffset: 50;
   }
 }
 
 @keyframes design-animate {
   100% {
-    stroke-dashoffset: 150;
+    stroke-dashoffset: 87;
   }
 }
 
 @keyframes development-animate {
   100% {
-    stroke-dashoffset: 200;
+    stroke-dashoffset: 180;
   }
 }
 
@@ -242,18 +249,21 @@
 .dot-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .dot-list-item {
   margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 7px;
 }
 
 .dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 10px;
+  display: inline-block; /* Set the dot to display in a line with text */
+  width: 10px; /* Adjust the width of the dot */
+  height: 10px; /* Adjust the height of the dot */
+  border-radius: 50%; /* Make the dot circular */
+  margin-right: 5px; /* Add some spacing between the dot and text */
 }
 
 .red {
@@ -270,37 +280,59 @@
 }
 
 /* team members */
-.second-child-1 {
-  padding: 0;
-}
+
 .team-members-div {
-  padding: 7px;
+  padding: 20px;
 }
 .team-member-head-div {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  gap: 16px;
+  margin-bottom: 40px;
 }
 .team-member-text {
-  font-size: 80px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 500;
 }
 .see-all-btn {
-  padding: 9px 15px;
+  font-size: 12px;
+  padding: 5px;
   cursor: pointer;
-  border-radius: 40px;
-  font-weight: 300;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.see-all-btn:hover {
+  background-color: #99ccff;
 }
 
 .team-list {
   border-radius: 30px;
   list-style-type: none;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
-.member .list-item {
-  font-weight: 700;
-  font-size: large;
+.list-item {
+  flex: 1;
+}
+
+.member-img-div {
+  display: flex;
+  flex-direction: row;
+}
+.member-name {
+  font-weight: 100;
+  font-size: small;
+}
+.member-role {
+  font: 100;
+  font-size: x-small;
+}
+#member-profile-img {
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 /* team member modal  */
@@ -316,32 +348,96 @@
   align-items: center;
 }
 
-.team-members-modal-content {
+.modals-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  max-width: 600px;
-  width: 100%;
+  max-width: 1000px;
+  width: auto;
   color: black;
 }
 
-.team-member-head-div {
+.modals-head-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  gap: 30px;
+}
+/* add task form css */
+#addTaskModal {
+  margin-top: 50px;
 }
 
-.team-member-text {
-  font-size: 20px;
+.btn-primary:hover {
+  background-color: #0056b3;
 }
 
-.member-img-div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+/* Hover effect for form text */
+.form-text:hover {
+  color: #007bff;
+  cursor: help;
 }
 
-/* responsive */
+/* Hover effect for form inputs */
+.input-group-merge input:hover {
+  border-color: #007bff;
+}
+
+/* Hover effect for form textarea */
+.form-control:focus,
+textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Style for the "Assigned To" select */
+#assigned-to {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
+}
+
+#assigned-to:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+#assigned-to option[disabled] {
+  color: #6c757d;
+}
+
+/* Style for the "Priority" select */
+#priority {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
+}
+
+#priority:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+#priority option[disabled] {
+  color: #6c757d;
+}
 
 /* second child -3 */
+
+/* meetings table */
+
+.table > thead {
+  font-size: 20px;
+}
+.table > thead > tr {
+  font-size: 20px;
+}

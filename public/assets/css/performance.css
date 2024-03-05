@@ -1,0 +1,89 @@
+.performance-container {
+  padding: 15px;
+  background-color: rgb(30 41 59);
+  color: aliceblue;
+}
+
+.individual-performance-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.performance-table-head {
+  color: rgb(30 41 59);
+  border-right: 1px solid black;
+}
+
+/* search input styles */
+#emp-id {
+  color: #673ab7;
+}
+
+.individual-performance-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.individual-performance-container > div {
+  padding: 10px;
+}
+
+/* Progress bar styles */
+.performance-progress-bars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.performance-progress-bar-container {
+  display: grid;
+  gap: 20px;
+}
+.progress-bar-container {
+  position: relative;
+  height: 20px;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #72ad74; /* Green color for progress */
+  text-align: center;
+  line-height: 20px; /* Center text vertically */
+  color: white; /* Text color */
+  border: 1px solid aliceblue;
+}
+
+/* Adjust the width and colors based on your preferences */
+#qualityOfWork .progress-bar {
+  width: 85%;
+  background-color: #4caf50;
+}
+#productivity .progress-bar {
+  width: 90%;
+  background-color: #2196f3;
+}
+#problemSolving .progress-bar {
+  width: 88%;
+  background-color: #ff9800;
+}
+#knowledge .progress-bar {
+  width: 92%;
+  background-color: #673ab7;
+}
+#attendance .progress-bar {
+  width: 95%;
+  background-color: #ff5722;
+}
+#relationWithOthers .progress-bar {
+  width: 90%;
+  background-color: #795548;
+}
+#leadershipQuality .progress-bar {
+  width: 87%;
+  background-color: #e91e63;
+}

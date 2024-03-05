@@ -13,7 +13,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
-			   with font-awesome or any other icon font library -->
+               with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
                     <a href="dashboard" class="nav-link">
@@ -22,7 +22,7 @@
                     </a>
                 </li>
 
-                <!-- leads -->
+                <!-- project -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fad fa-user-check"></i>
@@ -32,20 +32,44 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+
                         <li class="nav-item">
-                            <a href="project-List" class="nav-link">
+                            <a href="project-list" class="nav-link">
                                 <i class="fa fa-users nav-icon text-info"></i>
-                                <p>Projects Lists</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="project-addproject" class="nav-link">
-                                <i class="fa fa-users nav-icon text-info"></i>
-                                <p>Add Project </p>
+                                <p>Project List </p>
                             </a>
                         </li>
 
                     </ul>
+
+                </li>
+
+                <!-- performance -->
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fad fa-user-check"></i>
+                        <p>
+                            performance
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        s
+                        <li class="nav-item">
+                            <a href="performance-employeePerformance" class="nav-link">
+                                <i class="fa fa-users nav-icon text-info"></i>
+                                <p> employee performance </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="performance-departmentPerformance" class="nav-link">
+                                <i class="fa fa-users nav-icon text-info"></i>
+                                <p> performance of department </p>
+                            </a>
+                        </li>
+
+                    </ul>
+
                 </li>
 
                 <!-- careers  -->
@@ -72,7 +96,7 @@
 <script src="assets/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-    $.widget.bridge('uibutton', $.ui.button)
+$.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -88,7 +112,8 @@
 <!-- Toastr -->
 <script src="assets/admin/plugins/toastr/toastr.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js">
+</script>
 <script src="assets/js/CallService.js"></script>
 <script src="assets/js/commonfunctions.js"></script>
 <script src="assets/js/md5.js"></script>
