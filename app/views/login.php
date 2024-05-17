@@ -82,7 +82,8 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                 </div>
-                                <input class="form-control" placeholder="Username" type="text" id="Username" name="Username" required>
+                                <input class="form-control" placeholder="Username" type="text" id="Username"
+                                    name="Username" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -90,7 +91,8 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                 </div>
-                                <input class="form-control" placeholder="Password" type="password" id="Password" name="Password" required>
+                                <input class="form-control" placeholder="Password" type="password" id="Password"
+                                    name="Password" required>
                             </div>
                         </div>
                         <a href="javascript:;">Forgot your password?</a>
@@ -116,26 +118,27 @@
             </div>
         </div>
         <script>
-            // The SignUp/SignIn form
+        // The SignUp/SignIn form
 
-            const signUpButton = document.getElementById('signUp');
-            const signInButton = document.getElementById('signIn');
-            const container = document.getElementById('container');
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
 
-            signUpButton.addEventListener('click', () => {
-                container.classList.add('right-panel-active');
-            });
+        signUpButton.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
 
-            signInButton.addEventListener('click', () => {
-                container.classList.remove('right-panel-active');
-            });
+        signInButton.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
         </script>
         <footer class="footer">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-6">
                         <div class="copyright">
-                            &copy; <?php echo date("Y"); ?> <a href="https://techz.in/" target="_blank">Iewduh Techz Private Limited</a>.
+                            &copy; <?php echo date("Y"); ?> <a href="https://techz.in/" target="_blank">Iewduh Techz
+                                Private Limited</a>.
                         </div>
                     </div>
                 </div>
@@ -157,125 +160,125 @@
 </body>
 
 <script>
-    $('#Password').on('keypress', function(e) {
-        if (e.which == 13) {
-            AuthCall();
-        }
-    });
-
-    $(document).on('keypress', 'input', function(e) {
-        if (e.which == 13) {
-            e.preventDefault();
-            var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
-            console.log($next.length);
-            if (!$next.length) {
-                $next = $('[tabIndex=1]');
-            }
-            $next.focus();
-        }
-    });
-
-    $("#login-form").on('submit', function(e) {
-
-        e.preventDefault();
+$('#Password').on('keypress', function(e) {
+    if (e.which == 13) {
         AuthCall();
+    }
+});
+
+$(document).on('keypress', 'input', function(e) {
+    if (e.which == 13) {
+        e.preventDefault();
+        var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
+        console.log($next.length);
+        if (!$next.length) {
+            $next = $('[tabIndex=1]');
+        }
+        $next.focus();
+    }
+});
+
+$("#login-form").on('submit', function(e) {
+
+    e.preventDefault();
+    AuthCall();
+});
+
+
+function AuthCall() {
+
+    try {
+
+        var json = new Object();
+        json.Username = $("#Username")[0].value;
+        json.Password = $("#Password")[0].value;
+
+        var svcdta = new Object();
+        svcdta.Module = "Auth";
+        svcdta.Page_key = "Login";
+        svcdta.JSON = json;
+
+        Authenticate(svcdta);
+    } catch (ex) {
+        console.log(ex.stack);
+        alert(ex.stack);
+    }
+
+}
+
+var ipaddress;
+$(document).ready(function() {
+    sessionStorage.clear();
+    localStorage.clear();
+
+    $("#Username")[0].focus();
+});
+var msgToDisplay;
+
+
+
+function clearForm() {
+    $("#Username")[0].value = "";
+    $("#Password")[0].value = "";
+    $("#Username")[0].focus();
+}
+
+function Authenticate(svcdta) {
+
+    $.LoadingOverlay("show");
+    svcdta.MSC = $.md5(new Date().getDate().toString().padStart(2, "0"));
+    var data = JSON.stringify(svcdta);
+    $.ajax({
+        data: data,
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        async: false,
+        url: "index.php",
+        success: function showData(arg) {
+            onSuccess(arg);
+        },
+        error: function err(arg) {
+            $.LoadingOverlay("hide");
+
+            console.log(JSON.stringify(arg));
+
+            if (arg.status == 404)
+                alert(arg.statusText);
+            else if (arg.status == 0) {
+                alert(arg.statusText);
+            } else {
+
+            }
+        }
     });
+}
 
 
-    function AuthCall() {
+//on success call
+function onSuccess(rc) {
 
+    $.LoadingOverlay("hide");
+    console.log(JSON.stringify(rc));
+
+    if (rc.return_code) // data was recieved successfully 
+    {
+        var f = rc.return_data;
+        sessionStorage.setItem("PrayagEdu_user", f.username);
+        sessionStorage.setItem("PrayagEdu_session", f.sessionkey);
+        window.open(f["nextPage"], '_self');
+    } else //data was recieved successfully but was returned by service with error code
+    {
         try {
-
-            var json = new Object();
-            json.Username = $("#Username")[0].value;
-            json.Password = $("#Password")[0].value;
-
-            var svcdta = new Object();
-            svcdta.Module = "auth";
-            svcdta.Page_key = "Login";
-            svcdta.JSON = json;
-
-            Authenticate(svcdta);
+            alert(rc.return_data);
+            clearForm();
         } catch (ex) {
-            console.log(ex.stack);
             alert(ex.stack);
         }
-
     }
+    //Hideloadingpanle();
 
-    var ipaddress;
-    $(document).ready(function() {
-        sessionStorage.clear();
-        localStorage.clear();
-
-        $("#Username")[0].focus();
-    });
-    var msgToDisplay;
-
-
-
-    function clearForm() {
-        $("#Username")[0].value = "";
-        $("#Password")[0].value = "";
-        $("#Username")[0].focus();
-    }
-
-    function Authenticate(svcdta) {
-
-        $.LoadingOverlay("show");
-        svcdta.MSC = $.md5(new Date().getDate().toString().padStart(2, "0"));
-        var data = JSON.stringify(svcdta);
-        $.ajax({
-            data: data,
-            type: 'POST',
-            dataType: 'json',
-            contentType: 'application/json',
-            async: false,
-            url: "index.php",
-            success: function showData(arg) {
-                onSuccess(arg);
-            },
-            error: function err(arg) {
-                $.LoadingOverlay("hide");
-
-                console.log(JSON.stringify(arg));
-
-                if (arg.status == 404)
-                    alert(arg.statusText);
-                else if (arg.status == 0) {
-                    alert(arg.statusText);
-                } else {
-
-                }
-            }
-        });
-    }
-
-
-    //on success call
-    function onSuccess(rc) {
-
-        $.LoadingOverlay("hide");
-        console.log(JSON.stringify(rc));
-
-        if (rc.return_code) // data was recieved successfully 
-        {
-            var f = rc.return_data;
-            sessionStorage.setItem("PrayagEdu_user", f.username);
-            sessionStorage.setItem("PrayagEdu_session", f.sessionkey);
-            window.open(f["nextPage"], '_self');
-        } else //data was recieved successfully but was returned by service with error code
-        {
-            try {
-                alert(rc.return_data);
-                clearForm();
-            } catch (ex) {
-                alert(ex.stack);
-            }
-        }
-        //Hideloadingpanle();
-
-    }
+}
 </script>
 
 </html>

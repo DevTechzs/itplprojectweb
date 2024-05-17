@@ -1,5 +1,7 @@
 <?php
+
 namespace app\modules\auth\classes;
+
 use \app\database\DBController;
 
 class Login
@@ -12,7 +14,7 @@ class Login
             array(":Username", $data["Username"]),
             array(":Password", hash("sha256", substr($data["Username"], 0, 1) . $data["Password"]))
         );
-        
+
         $query = "SELECT * FROM Users WHERE Username = :Username AND Password = :Password";
 
         $res = DBController::sendData($query, $params);
@@ -43,16 +45,15 @@ class Login
                 $_SESSION['Username'] = $data['Username'];
                 $_SESSION['UserType'] = $res['UserType'];
 
-                if ($_SESSION['UserType']==1) {
-                    $nextpage="dashboard";
-                }else if($_SESSION['UserType']==2){
-                    $nextpage="home";
-                }else if($_SESSION['UserType']==3){
-                    $nextpage="user";
-
+                if ($_SESSION['UserType'] == 1) {
+                    $nextpage = "dashboard";
+                } else if ($_SESSION['UserType'] == 2) {
+                    $nextpage = "home";
+                } else if ($_SESSION['UserType'] == 3) {
+                    $nextpage = "user";
                 }
 
-                if (isset($data['FCMToken'])){
+                if (isset($data['FCMToken'])) {
                     $params = array(
                         array(":FCMToken", $data['FCMToken']),
                         array(":UserID", $res['UserID'])
@@ -63,7 +64,7 @@ class Login
                     DBController::ExecuteSQL($query, $params);
                 }
 
-                return array("return_code" => true, "return_data" => array( "Name" => $res['Name'],"Username" => $data['Username'],"EmailID"=>$res['EmailID'], "SessionKey" => $sessionkey, "SessionExpiryDate" => $sessionkeyexpirydatetime->format('Y-m-d H:i:s'),"UserType"=>$res['UserType'], "nextPage" => $nextpage));
+                return array("return_code" => true, "return_data" => array("Name" => $res['Name'], "Username" => $data['Username'], "EmailID" => $res['EmailID'], "SessionKey" => $sessionkey, "SessionExpiryDate" => $sessionkeyexpirydatetime->format('Y-m-d H:i:s'), "UserType" => $res['UserType'], "nextPage" => $nextpage));
             }
         }
         return array("return_code" => false, "return_data" =>  "Username or Password does not match");

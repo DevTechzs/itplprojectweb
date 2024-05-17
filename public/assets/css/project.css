@@ -4,6 +4,11 @@
   overflow-x: hidden;
 }
 
+.asdas {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
 .main-container {
   margin: 0 auto;
   display: flex;
@@ -299,7 +304,6 @@
   padding: 5px;
   cursor: pointer;
   font-weight: 600;
-  border-radius: 10px;
 }
 
 .see-all-btn:hover {
@@ -314,7 +318,8 @@
   gap: 10px;
 }
 .list-item {
-  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 .member-img-div {
@@ -383,7 +388,10 @@
 .input-group-merge input:hover {
   border-color: #007bff;
 }
-
+.required:after {
+  content: " *";
+  color: red;
+}
 /* Hover effect for form textarea */
 .form-control:focus,
 textarea:focus {

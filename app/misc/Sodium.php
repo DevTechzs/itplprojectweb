@@ -29,7 +29,7 @@ class Sodium {
     static function safeDecrypt($cipher)
     {
         $cipher = base64_decode($cipher);
-
+   
         return sodium_crypto_box_seal_open($cipher, base64_decode(self::$keypair));
     }
 }

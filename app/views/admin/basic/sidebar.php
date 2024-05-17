@@ -34,11 +34,24 @@
                     <ul class="nav nav-treeview">
 
                         <li class="nav-item">
-                            <a href="project-list" class="nav-link">
+                            <a href="project-projectList" class="nav-link">
                                 <i class="fa fa-users nav-icon text-info"></i>
                                 <p>Project List </p>
                             </a>
                         </li>
+
+
+                        <li class="nav-item">
+                            <a href="products-viewleads" class="nav-link">
+                                <i class="fa fa-users nav-icon text-info"></i>
+                                <p>Test List </p>
+                            </a>
+                        </li>
+
+
+
+
+
 
                     </ul>
 
@@ -96,7 +109,7 @@
 <script src="assets/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-$.widget.bridge('uibutton', $.ui.button)
+    $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -114,7 +127,5 @@ $.widget.bridge('uibutton', $.ui.button)
 
 <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js">
 </script>
-<script src="assets/js/CallService.js"></script>
-<script src="assets/js/commonfunctions.js"></script>
-<script src="assets/js/md5.js"></script>
+
 <!-- <script src="assets/js/index.js"></script> -->

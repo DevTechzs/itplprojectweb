@@ -1,0 +1,72 @@
+CREATE TABLE Project (
+  ProjectID smallint PRIMARY KEY,
+  ProjectTitle varchar(50) NOT NULL,
+  ProjectDescription text NOT NULL,
+  ManagerID smallint NOT NULL,
+  FOREIGN KEY (ManagerID) REFERENCES Staff(StaffID),  
+  Attachments BLOB, 
+  ClientID smallint,
+  WorkorderNumber varchar(50),
+  WorkorderDate date,
+  WorkorderFileName varchar(20),
+  ProjectCoordinatorStaffID smallint,
+  FOREIGN KEY (ProjectCoordinatorStaffID) REFERENCES Staff(StaffID), 
+  ClientCoordinatorName varchar(100),
+  ClientCoordinatorContactNo varchar(20),
+  ProjectBudget float,
+  StartDate date,
+  DueDate date,
+  LastUpdated date
+);
+
+
+
+CREATE TABLE ProjectMeetings (
+  MeetingID smallint PRIMARY KEY,
+  ProjectID smallint NOT NULL,
+  FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID), 
+  MeetingDescription varchar(200) NOT NULL,
+  MeetingDate date,
+  AttendeeStaffIDs varchar(255),
+  Report BLOB 
+);
+
+
+
+CREATE TABLE Task (
+  TaskId smallint PRIMARY KEY,
+  ProjectModuleID smallint NOT NULL,
+  FOREIGN KEY (ProjectModuleID) REFERENCES ProjectModule(ProjectModuleID), 
+  TaskTitle varchar(100) NOT NULL,
+  TaskDescription varchar(300) NOT NULL,
+  AssignedToStaffIDs varchar(255)
+  AssignedFromStaffID smallint,
+  FOREIGN KEY (AssignedFromStaffID) REFERENCES Staff(StaffID),
+  CreatedAt date NOT NULL,
+  StartDate date,
+  DueDate date,
+  Progress smallint,
+  LastUpdated date,
+  Report BLOB 
+)
+
+
+CREATE TABLE ProjectModule (
+  ProjectModuleID smallint PRIMARY KEY,
+  ModuleName varchar(255) NOT NULL,
+  ModuleDescription text,
+  ModulePriority smallint,
+  ProjectID smallint NOT NULL,
+  FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID), 
+  ReportManagerStaffID smallint,
+  FOREIGN KEY (ReportManagerStaffID) REFERENCES Staff(StaffID), 
+  Planning smallint,
+  Desing smallint,
+  Development smallint,
+  Testing smallint,
+  Deployment smallint,
+  isCompleted boolean NOT NULL DEFAULT false, 
+  CompletionDate date,
+  UpdatedDate date
+);
+

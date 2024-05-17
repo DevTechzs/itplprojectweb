@@ -1,6 +1,7 @@
 <?php
 
 namespace app\database;
+
 use Exception;
 use \PDO;
 
@@ -19,7 +20,7 @@ class DBController
 	{
 		require_once('DBcredentials.php');
 		if (self::$conn === false) {
-			self::$conn = new PDO("mysql:host=" . self::$servername.";dbname=" .$database,$username, $password);
+			self::$conn = new PDO("mysql:host=" . self::$servername . ";dbname=" . $database, $username, $password);
 			self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 	}
@@ -213,3 +214,15 @@ class DBController
 }
 
 
+class Helper
+{
+	static function generate_string($length = 5)
+	{
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$randomString = '';
+		for ($i = 0; $i < $length; $i++) {
+			$randomString .= $characters[rand(0, strlen($characters) - 1)];
+		}
+		return $randomString;
+	}
+}

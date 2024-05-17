@@ -17,8 +17,7 @@ header('Cache-Control: max-age=86400');
 header('HTTP/2 200 Success');
 header("Status: 200");
 header("Server: MAC_OS_X");
-header("X-Powered-By: Python");
-header("Developer: Monoj Das");
+header("Developer: Iewduh Techz Private Limited");
 date_default_timezone_set('Asia/Kolkata');
 
 // set to the user defined error handler
@@ -35,6 +34,8 @@ if (isset($_SESSION["UserType"]) && $_SESSION["UserType"] == 1) {
     define("VIEWPATH", "../app/views/admin");
 } elseif (isset($_SESSION["UserType"]) && $_SESSION["UserType"] == 4) {
     define("VIEWPATH", "../app/views/admission");
+} elseif (isset($_SESSION["UserType"]) && $_SESSION["UserType"] == 2) {
+    define("VIEWPATH", "../app/views/staff");
 } else {
     define("VIEWPATH", "../app/views");
 }
@@ -48,16 +49,20 @@ use app\modules\auth\AuthenticationController;
 use app\misc\MSC;
 use app\misc\IPLogger;
 use app\database\DBController;
-use app\modules\auth\classes\Password;
+use app\modules\clients\ClientController;
 use app\modules\filemanager\FileController;
 use app\modules\settings\SettingController;
+use app\modules\products\ProductsController;
+use app\modules\supports\SupportController;
+use app\modules\supportTicket\SupportTicketController;
 use app\modules\project\ProjectController;
-use app\modules\performance\PerformanceController;
 //newly added
 use app\modules\careers\CareerController;
-use app\modules\performance\classes\Performance;
 use app\modules\supportTicket\classes\SupportTicket;
 use app\modules\staff\StaffController; //added by dev on 19/01/24
+use app\modules\administration\AdministrationController;
+use app\modules\marketings\MarketingController;
+use app\modules\hr\HRController;
 
 if (!isset($data["JSON"])) {
     $data["JSON"] = "";
@@ -66,11 +71,11 @@ if (!isset($data["Page_key"])) {
     $data["Page_key"] = "";
 }
 
-DBController::logs(json_encode($data));
+// DBController::logs(json_encode($_SERVER));
 
-IPLogger::logIP($data);
+// IPLogger::logIP($data);
 
-if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) && isset($data["MSC"])) {
+if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"])) {
 
     header('HTTP/1.1 200 Success');
     header("Status: 200");
@@ -90,18 +95,22 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
     //    }
 
     if (AuthenticationController::isValidSession($data)) {
-
         switch ($data["Module"]) {
-
             case "Settings":
                 $result = (new SettingController())->Route($data);
                 break;
-
-
+            case "Client":
+                $result = (new ClientController())->Route($data);
+                break;
+            case "Products":
+                $result = (new ProductsController())->Route($data);
+                break;
+            case "file":
+                FileController::File();
+                break;
             case "Auth":
                 $result = (new AuthenticationController())->Route($data);
                 break;
-
             case "Careers":
                 $result = (new CareerController())->Route($data);
                 break;
@@ -110,10 +119,12 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
                 $result = (new ProjectController())->Route($data);
                 break;
 
-            case "Performance":
-                $result = (new PerformanceController())->Route($data);
-                break;
 
+
+
+            case "SupportTicket":
+                $result = (new SupportTicketController())->Route($data);
+                break;
             case "Staff": //added by dev on 19/01/24
                 $result = (new StaffController())->Route($data);
                 break;
@@ -137,18 +148,22 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
                 $result = (new CareerController())->Route($data);
                 break;
 
+            case "file":
+                FileController::File();
+                break;
+
             case "Auth":
-
-
                 $result = (new AuthenticationController())->Route($data);
                 break;
 
-            case "Client":
-                if ($data["Page_key"] = "getClientsByProductCode")
-                    // $result = (new \app\modules\clients\classes\Client())->getClientsByProductCode($data["JSON"]);
-                    break;
+
+
+
             default:
-                $result = (new AuthenticationController)->Route($data);
+                //$result = (new ProductsController())->Route($data);
+                $result = array("return_code" => false, "return_data" => array("Key not found"));
+
+                // $result = (new AuthenticationController)->Route($data);
                 break;
         }
 
@@ -176,39 +191,49 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
         case "dashboard":
             load(VIEWPATH . "/dashboard.php");
             break;
-
-
-        case "file":
-            FileController::File();
+        case "home":
+            load(VIEWPATH . "/home.php");
             break;
 
-        case "settings":
-            SettingController::Views($page);
+        case "changepassword":
+            load(VIEWPATH . "/changepassword.php");
             break;
-
-        case "careers":
-            CareerController::Views($page);
+        case "auth":
+            AuthenticationController::Views($page);
             break;
-
+        case "clients":
+            ClientController::Views($page);
+            break;
+        case "products":
+            ProductsController::Views($page);
+            break;
 
         case "project":
             ProjectController::Views($page);
             break;
 
-        case "performance":
-            PerformanceController::Views($page);
+        case "file":
+            FileController::File();
+            break;
+        case "settings":
+            SettingController::Views($page);
+            break;
+        case "careers":
+            CareerController::Views($page);
             break;
 
-
-        case "changepassword":
-            load("../app/views/admin/changepassword.php");
+        case "supports":
+            SupportController::Views($page);
             break;
-
-
-
+        case "supportTicket":
+            SupportTicketController::Views($page);
+            break;
         case "staff":
-            StaffController::Views($page);
+            StaffController::Views($page); //added by dev on 19/01/24
             break;
+
+
+
 
         case "logout":
             session_destroy();
@@ -216,13 +241,6 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
             ob_end_flush();
             exit;
             break;
-
-
-
-
-
-
-
 
         default:
             header("Content-type: */*;");
@@ -238,6 +256,11 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"]) &
 
     if ($_SESSION["UserType"] == 1) {
         header('Location: dashboard');
+        ob_end_flush();
+        /* Make sure that code below does not get executed when we redirect. */
+        exit;
+    } else if ($_SESSION["UserType"] == 2) {
+        header('Location: home');
         ob_end_flush();
         /* Make sure that code below does not get executed when we redirect. */
         exit;
@@ -275,6 +298,7 @@ function publicRequest($query_array)
             case "login":
                 load(VIEWPATH . "/login.php");
                 break;
+
             case "test123":
                 load(VIEWPATH . "/test.php");
                 break;
@@ -338,32 +362,32 @@ function myErrorHandler($errno, $errstr, $errfile, $errline)
     switch ($errno) {
         case E_USER_ERROR:
             $errormessage .= "<b>My ERROR</b> [$errno] $errstr\n";
-            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .= "Aborting...<br />\n";
+            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .=  "Aborting...<br />\n";
             DBController::logs($errormessage);
             exit(1);
 
         case E_USER_WARNING:
-            $errormessage .= "<b>My WARNING</b> [$errno] $errstr<br />\n";
-            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .= "Aborting...<br />\n";
+            $errormessage .=  "<b>My WARNING</b> [$errno] $errstr<br />\n";
+            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .=  "Aborting...<br />\n";
             break;
 
         case E_USER_NOTICE:
-            $errormessage .= "<b>My NOTICE</b> [$errno] $errstr<br />\n";
-            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .= "Aborting...<br />\n";
+            $errormessage .=  "<b>My NOTICE</b> [$errno] $errstr<br />\n";
+            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .=  "Aborting...<br />\n";
             break;
         case E_ERROR:
-            $errormessage .= "<b>File missing</b> [$errno] $errstr<br />\n";
-            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .= "Aborting...<br />\n";
+            $errormessage .=  "<b>File missing</b> [$errno] $errstr<br />\n";
+            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .=  "Aborting...<br />\n";
             break;
 
         default:
-            $errormessage .= "Unknown error type: [$errno] $errstr<br />\n";
-            $errormessage .= "  Fatal error on line $errline in file $errfile\n";
-            $errormessage .= "Aborting...<br />\n";
+            $errormessage .=  "Unknown error type: [$errno] $errstr<br />\n";
+            $errormessage .=  "  Fatal error on line $errline in file $errfile\n";
+            $errormessage .=  "Aborting...<br />\n";
 
             DBController::logs($errormessage);
             exit(1);
