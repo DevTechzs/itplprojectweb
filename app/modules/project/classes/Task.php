@@ -173,10 +173,8 @@ class Task
         //  WHERE FIND_IN_SET(s.StaffID, (SELECT AssignedToStaffIDs FROM Task WHERE TaskId = :TaskID)) = 0 
         //  and ptm.ProjectModuleID = :ProjectModuleID and pm.ProjectID=:ProjectID;";
 
-        $query = "SELECT distinct s.StaffID, s.StaffName FROM staff s JOIN ProjectTeamMembers ptm ON
-        s.StaffID = ptm.StaffID JOIN ProjectModule pm ON ptm.ProjectModuleID = pm.ProjectModuleID 
-        WHERE FIND_IN_SET(s.StaffID, (SELECT AssignedToStaffIDs FROM Task WHERE TaskId = :TaskID)) = 0 
-        and ptm.ProjectModuleID = :ProjectModuleID;";
+        $query = "SELECT s.StaffID, s.StaffName FROM Staff s JOIN Projectteammembers ptm ON s.StaffID = ptm.StaffID WHERE ptm.ProjectModuleID = :ProjectModuleID
+         AND ptm.isRemoved = 0 AND s.StaffID NOT IN ( SELECT t.AssignedFromStaffID FROM Task t WHERE t.ProjectModuleID =:ProjectModuleID  AND t.TaskId = :TaskID);";
 
         // $query = "SELECT distinct s.StaffID, s.StaffName FROM staff s JOIN ProjectTeamMembers ptm on
         // s.StaffID = ptm.StaffID JOIN ProjectModule pm ON ptm.ProjectModuleID = pm.ProjectModuleID
@@ -287,6 +285,19 @@ class Task
             return array("return_code" => true, "return_data" => "Document Saved");
         } else {
             return array("return_code" => false, "return_data" => "Document could not be saved");
+        }
+    }
+
+    function moduleMembersForTask($data)
+    {
+        $params = array(array(':ModuleID', $data['ModuleID']));
+        $query = "select distinct s.StaffID, s.StaffName from staff s join
+        projectteammembers ptm on s.StaffID = ptm.StaffID where ptm.ProjectModuleID  = :ModuleID and ptm.isRemoved = 0;";
+        $res = DBController::getDataSet($query, $params);
+        if ($res) {
+            return array("return_code" => true, "return_data" => $res);
+        } else {
+            return array("return_code" => false, "return_data" => "No Staff in the module");
         }
     }
 }

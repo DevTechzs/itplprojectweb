@@ -149,12 +149,6 @@
   height: 200px;
 }
 
-@keyframes animate {
-  100% {
-    stroke-dashoffset: 420;
-  }
-}
-
 /* sub-progress bars */
 .progress-bars,
 .sub-progress-bar {
@@ -225,16 +219,16 @@
   stroke: #cc33ff;
   animation: testing-animate 2s linear forwards;
 }
-
+/* 
 @keyframes planning-animate {
   100% {
-    stroke-dashoffset: 50;
+    stroke-dashoffset: 250;
   }
 }
 
 @keyframes design-animate {
   100% {
-    stroke-dashoffset: 87;
+    stroke-dashoffset: 80;
   }
 }
 
@@ -246,7 +240,38 @@
 
 @keyframes testing-animate {
   100% {
-    stroke-dashoffset: 245;
+    stroke-dashoffset: 30;
+  }
+} */
+@keyframes animate {
+  to {
+    stroke-dashoffset: calc(
+      (360.327 - (var(--overall-progress)) / 100 * 360.327)
+    );
+  }
+}
+
+@keyframes planning-animate {
+  to {
+    stroke-dashoffset: calc(251.327 - (var(--max-planning) / 100 * 251.327));
+  }
+}
+
+@keyframes design-animate {
+  to {
+    stroke-dashoffset: calc(251.327 - (var(--max-design) / 100 * 251.327));
+  }
+}
+
+@keyframes development-animate {
+  to {
+    stroke-dashoffset: calc(251.327 - (var(--max-development) / 100 * 251.327));
+  }
+}
+
+@keyframes testing-animate {
+  to {
+    stroke-dashoffset: calc(251.327 - (var(--max-testing) / 100 * 251.327));
   }
 }
 

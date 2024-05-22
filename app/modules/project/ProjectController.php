@@ -6,6 +6,7 @@ use app\core\Controller;
 use app\modules\project\classes\Meetings;
 use app\modules\project\classes\Project;
 use app\modules\project\classes\Task;
+use app\modules\project\classes\Module;
 
 class ProjectController implements Controller
 {
@@ -71,6 +72,10 @@ class ProjectController implements Controller
                 return (new Project())->editProjectModuleDetails($jsondata);
             case "uploadTaskDocument":
                 return (new Task())->uploadTaskDocument($jsondata);
+            case "moduleMembersForTask":
+                return (new Task())->moduleMembersForTask($jsondata);
+            case "calculateProjectProgress":
+                return (new Module())->calculateProjectProgress($jsondata);
             default:
                 // header('HTTP/1.1 401  Unauthorized Access');
                 // header("Status: 401 ");

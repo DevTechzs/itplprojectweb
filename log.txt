@@ -256,3 +256,33 @@ Aborting...<br />
  SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.TaskProgress' in 'group statement'
 
 15-05-24 01:46:59 : Reached request Login
+
+19-05-24 03:46:03 : Reached request Login
+
+21-05-24 12:57:28 : SELECT s.StaffID, s.StaffName FROM Staff s JOIN Projectteammembers ptm ON s.StaffID = ptm.StaffID WHERE ptm.ProjectModuleID = :ProjectModuleID and pm.ProjectID = :ProjectID
+         AND ptm.isRemoved = 0 AND s.StaffID NOT IN ( SELECT t.AssignedFromStaffID FROM Task t WHERE t.ProjectModuleID = :ProjectModuleID AND t.TaskId = :TaskID ); 
+ [[":TaskID",1],[":ProjectModuleID",1]] 
+ SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+
+21-05-24 12:58:04 : SELECT s.StaffID, s.StaffName FROM Staff s JOIN Projectteammembers ptm ON s.StaffID = ptm.StaffID WHERE ptm.ProjectModuleID = :ProjectModuleID and pm.ProjectID = :ProjectID
+         AND ptm.isRemoved = 0 AND s.StaffID NOT IN ( SELECT t.AssignedFromStaffID FROM Task t WHERE t.ProjectModuleID = :ProjectModuleID AND t.TaskId = :TaskID ); 
+ [[":TaskID",1],[":ProjectModuleID",1]] 
+ SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+
+21-05-24 12:59:39 : SELECT s.StaffID, s.StaffName FROM Staff s JOIN Projectteammembers ptm ON s.StaffID = ptm.StaffID WHERE ptm.ProjectModuleID = :ProjectModuleID and pm.ProjectID = :ProjectID
+         AND ptm.isRemoved = 0 AND s.StaffID NOT IN ( SELECT t.AssignedFromStaffID FROM Task t WHERE t.ProjectModuleID = :ProjectModuleID AND t.TaskId = :TaskID ); 
+ [[":TaskID",1],[":ProjectModuleID",1]] 
+ SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+
+21-05-24 01:01:16 : SELECT s.StaffID, s.StaffName FROM Staff s JOIN Projectteammembers ptm ON s.StaffID = ptm.StaffID WHERE ptm.ProjectModuleID = :ProjectModuleID
+         AND ptm.isRemoved = 0 AND s.StaffID NOT IN ( SELECT t.AssignedFromStaffID FROM Task t WHERE t.ProjectModuleID = 1 AND t.TaskId = 1 ); 
+ [[":TaskID",1],[":ProjectModuleID",1]] 
+ SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+
+21-05-24 08:52:02 : Reached request Login
+
+21-05-24 11:58:58 : Reached request Login
+
+22-05-24 02:33:15 : Reached request Login
+
+22-05-24 02:47:14 : Reached request Login
