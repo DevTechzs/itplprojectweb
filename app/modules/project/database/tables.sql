@@ -171,3 +171,26 @@ CREATE TABLE `Taskdocuments` (
   `DocumentTitle` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`DocumentID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- itpl.clients definition
+
+CREATE TABLE `clients` (
+  `ClientID` int(11) NOT NULL,
+  `ClientName` varchar(200) NOT NULL,
+  `TelephoneNo` varchar(15) NOT NULL,
+  `MobileNo` varchar(15) NOT NULL,
+  `Fax` varchar(15) DEFAULT NULL,
+  `ContactPersonName` varchar(200) NOT NULL,
+  `ContactPersonMobileNo` varchar(15) NOT NULL,
+  `ContactPersonDesignation` varchar(100) DEFAULT NULL,
+  `StateID` tinyint(4) NOT NULL,
+  `DistrictID` smallint(6) NOT NULL,
+  `CityName` varchar(100) NOT NULL,
+  `PinCode` varchar(10) NOT NULL,
+  `Landmark` text NOT NULL,
+  `Logo` varchar(100) DEFAULT NULL,
+  `MaxUsers` varchar(10) DEFAULT NULL,
+  `CreatedDateTime` timestamp NOT NULL DEFAULT current_timestamp(),
+  `CreatedBy` int(11) NOT NULL,
+  `isActive` bit(1) NOT NULL DEFAULT b'1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
