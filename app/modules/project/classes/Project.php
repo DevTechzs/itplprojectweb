@@ -229,7 +229,7 @@ class Project
         FROM Project p 
         LEFT JOIN Staff mr ON p.ManagerID = mr.StaffID 
         LEFT JOIN Staff pc ON p.ProjectCoordinatorStaffID = pc.StaffID 
-        inner join ProjectDocuments pd on pd.DocumentID = p.workOrderFileID 
+        left join ProjectDocuments pd on pd.DocumentID = p.workOrderFileID 
         WHERE p.ProjectID = :ProjectID";
 
         $res = DBController::sendData($query, $params);
