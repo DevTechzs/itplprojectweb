@@ -393,12 +393,9 @@ END AS IsAssignedToAllModules
 
     function showStaffAllToAssignProject()
     {
-        // $query = "SELECT s.StaffID,s.StaffName, d.DesignationName FROM Staff s
-        // JOIN Setting_Designation d ON s.DesignationID = d.DesignationID 
-        // WHERE d.DesignationID IN (7,8,9,10);";
         $query = "SELECT s.StaffID,s.StaffName, d.DesignationName FROM Staff s
-         JOIN Setting_Designation d ON s.DesignationID = d.DesignationID;";
-
+        JOIN Setting_Designation d ON s.DesignationID = d.DesignationID 
+        WHERE d.DesignationID IN (7,8,9,10);";
         $res = DBController::getDataSet($query);
         if ($res) {
             return array("return_code" => true, "return_data" => $res);

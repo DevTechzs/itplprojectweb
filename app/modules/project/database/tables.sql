@@ -21,7 +21,7 @@ CREATE TABLE `Staff` (
   `isPhotoUpdateEnable` bit(1) DEFAULT NULL,
   `isRemoved` bit(1) NOT NULL DEFAULT b'0',
   `SessionID` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) 
 
 -- itpl.project definition
 
