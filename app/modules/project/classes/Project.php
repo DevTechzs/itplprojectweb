@@ -335,7 +335,7 @@ END AS IsAssignedToAllModules
             array(":StaffID", $data['StaffID']),
         );
         $query = "SELECT DISTINCT pm.ProjectModuleID,pm.ModuleName from ProjectModule pm join ProjectTeamMembers ptm on 
-        ptm.ProjectModuleID = pm.ProjectModuleID join staff s on
+        ptm.ProjectModuleID = pm.ProjectModuleID join Staff s on
          s.StaffID = ptm.StaffID join Project p on 
          p.ProjectID = pm.ProjectID where s.StaffID = :StaffID and pm.ProjectID = :ProjectID
          and ptm.isRemoved = 0;";
@@ -376,7 +376,7 @@ END AS IsAssignedToAllModules
         // ";
 
         $query = "SELECT s.StaffID, s.StaffName
-        FROM staff s
+        FROM Staff s
         WHERE NOT EXISTS (
             SELECT 1
             FROM ProjectTeamMembers ptm

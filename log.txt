@@ -288,3 +288,140 @@ Aborting...<br />
 22-05-24 02:47:14 : Reached request Login
 
 22-05-24 07:26:35 : Reached request Login
+
+23-05-24 04:18:31 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:18:35 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:18:35 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:18:35 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:18:35 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:18:41 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:18:41 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:18:41 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:18:41 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:01 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:02 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:02 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:02 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:02 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:07 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:07 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:07 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:07 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:13 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:13 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:14 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:14 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:25 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:25 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:25 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:25 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:28 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:29 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:29 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
+
+
+23-05-24 04:31:29 : SELECT LoginDetailsID FROM LoginDetails WHERE SessionExpiryDateTime>NOW() AND UserID = :UserID AND SessionKey = :SessionKey AND isActive = 1 
+ [[":UserID",1],[":SessionKey","e84a7a05fe74897af59970c8d11a8519"]] 
+ SQLSTATE[HY000] [1045] Access denied for user 'nearchive'@'localhost' (using password: YES)
+
+23-05-24 04:31:29 : Unknown error type: [2] Undefined variable $database<br />
+  Fatal error on line 23 in file E:\study\xampp\htdocs\itplprojectweb\app\database\DBController.php
+Aborting...<br />
