@@ -482,11 +482,6 @@
     }
     let modulesCompleted = [];
 
-    function filterProjectModules(modules, moduleIds) {
-        // Use the filter method to filter modules whose ProjectModuleID exists in moduleIds
-        return modules.filter(module => moduleIds.includes(module.ProjectModuleID));
-    }
-
     function onModuleSuccess(rc) {
         if (rc.return_code) {
             switch (rc.Page_key) {
@@ -617,7 +612,8 @@
             interval: 10
         }, {
             element: $("#testing-bar-number"),
-            maxPercentage: totalProgress.Testing / total_modules * 100,
+            maxPercentage: (totalProgress.Testing / total_modules * 100) ? totalProgress.Testing / total_modules *
+                100 : 0,
             interval: 10
         }];
 
