@@ -21,23 +21,23 @@ class Project
 
 
 
-    function getProjectTeamMembers()
-    {
-        $query = "SELECT staff.StaffName
-        FROM Project
-        JOIN Staff ON Project.ManagerID = Staff.StaffID OR Project.ProjectCoordinatorStaffID = Staff.StaffID
-        WHERE Project.ProjectTitle = 'Project X';";
-        $res = DBController::getDataSet($query);
-        if ($res) {
-            return array("return_code" => true, "return_data" => $res);
-        } else {
-            return array("return_code" => false, "return_data" => "No data returned");
-        }
-    }
+    // function getProjectTeamMembers()
+    // {
+    //     $query = "SELECT staff.StaffName
+    //     FROM Project
+    //     JOIN Staff ON Project.ManagerID = Staff.StaffID OR Project.ProjectCoordinatorStaffID = Staff.StaffID
+    //     WHERE Project.ProjectTitle = 'Project X';";
+    //     $res = DBController::getDataSet($query);
+    //     if ($res) {
+    //         return array("return_code" => true, "return_data" => $res);
+    //     } else {
+    //         return array("return_code" => false, "return_data" => "No data returned");
+    //     }
+    // }
 
     function getClients($data)
     {
-        $query = "SELECT ClientID, ClientName from clients;";
+        $query = "SELECT ClientID, ClientName from Clients;";
         $res = DBController::getDataSet($query);
         if ($res) {
             return array("return_code" => true, "return_data" => $res);
@@ -149,7 +149,7 @@ class Project
 
             $fp = fopen("../app/data/letters/" . $newfilename, "w+");
             if (fwrite($fp, ($filedata))) {
-                $q2 = "INSERT INTO `projectdocuments` (`DocumentPath`, `DocumentTitle`) VALUES (  :DocumentPath, :DocumentTitle);";
+                $q2 = "INSERT INTO `ProjectDocuments` (`DocumentPath`, `DocumentTitle`) VALUES (  :DocumentPath, :DocumentTitle);";
                 $p2 = [
                     [":DocumentPath", $newfilename],
                     [":DocumentTitle", $file['filename']],
@@ -229,7 +229,7 @@ class Project
         FROM Project p 
         LEFT JOIN Staff mr ON p.ManagerID = mr.StaffID 
         LEFT JOIN Staff pc ON p.ProjectCoordinatorStaffID = pc.StaffID 
-        inner join projectdocuments pd on pd.DocumentID = p.workOrderFileID 
+        inner join ProjectDocuments pd on pd.DocumentID = p.workOrderFileID 
         WHERE p.ProjectID = :ProjectID";
 
         $res = DBController::sendData($query, $params);
@@ -316,9 +316,9 @@ END AS IsAssignedToAllModules
         $params = array(
             array(":ProjectID", Sodium::safeDecrypt($data['ProjectID'])),
         );
-        $query = "SELECT DISTINCT s.StaffID,s.StaffName, d.DesignationName FROM staff s 
-        JOIN projectteammembers pt ON pt.StaffID = s.StaffID JOIN projectmodule pm
-         ON pm.ProjectModuleID = pt.ProjectModuleID join setting_designation d on
+        $query = "SELECT DISTINCT s.StaffID,s.StaffName, d.DesignationName FROM Staff s 
+        JOIN ProjectTeamMembers pt ON pt.StaffID = s.StaffID JOIN ProjectModule pm
+         ON pm.ProjectModuleID = pt.ProjectModuleID join Setting_Designation d on
           s.DesignationID = d.DesignationID WHERE pm.ProjectID = :ProjectID and
           pt.isRemoved = 0;";
         $res = DBController::getDataSet($query, $params);
@@ -334,7 +334,7 @@ END AS IsAssignedToAllModules
             array(":ProjectID", Sodium::safeDecrypt($data['ProjectID'])),
             array(":StaffID", $data['StaffID']),
         );
-        $query = "SELECT DISTINCT pm.ProjectModuleID,pm.ModuleName from projectmodule pm join projectteammembers ptm on 
+        $query = "SELECT DISTINCT pm.ProjectModuleID,pm.ModuleName from ProjectModule pm join ProjectTeamMembers ptm on 
         ptm.ProjectModuleID = pm.ProjectModuleID join staff s on
          s.StaffID = ptm.StaffID join Project p on 
          p.ProjectID = pm.ProjectID where s.StaffID = :StaffID and pm.ProjectID = :ProjectID
@@ -393,8 +393,8 @@ END AS IsAssignedToAllModules
 
     function showStaffAllToAssignProject()
     {
-        $query = "SELECT s.StaffID,s.StaffName, d.DesignationName FROM staff s
-        JOIN setting_designation d ON s.DesignationID = d.DesignationID 
+        $query = "SELECT s.StaffID,s.StaffName, d.DesignationName FROM Staff s
+        JOIN Setting_Designation d ON s.DesignationID = d.DesignationID 
         WHERE d.DesignationID IN (7,8,9,10);";
         $res = DBController::getDataSet($query);
         if ($res) {
@@ -412,8 +412,8 @@ END AS IsAssignedToAllModules
             array(":ProjectModuleID", $data['ProjectModuleId'])
         );
 
-        $checkStaffs = "SELECT ptm.StaffID,ptm.ProjectTeamMemberID from projectteammembers ptm 
-        join projectmodule pm 
+        $checkStaffs = "SELECT ptm.StaffID,ptm.ProjectTeamMemberID from ProjectTeamMembers ptm 
+        join ProjectModule pm 
         on pm.ProjectModuleID = ptm.ProjectModuleID
         where pm.projectID = :ProjectID and ptm.StaffId = :StaffID and ptm.ProjectModuleID=:ProjectModuleID;";
 
@@ -427,7 +427,7 @@ END AS IsAssignedToAllModules
                 array(":ProjectTeamMemberID", $checkStaffData['ProjectTeamMemberID']),
 
             );
-            $query = "UPDATE projectteammembers SET isRemoved = 0,
+            $query = "UPDATE ProjectTeamMembers SET isRemoved = 0,
             ProjectModuleID = :ProjectModuleID where ProjectTeamMemberID = :ProjectTeamMemberID and StaffID = :StaffID";
         } else {
 
@@ -436,7 +436,7 @@ END AS IsAssignedToAllModules
                 array(":ProjectModuleID", $data['ProjectModuleId'])
 
             );
-            $query = "INSERT INTO projectteammembers(StaffID,
+            $query = "INSERT INTO ProjectTeamMembers(StaffID,
             ProjectModuleID, isRemoved, RemovedRemarks,
             isActive)values(:StaffID,:ProjectModuleID,0,'',1)";
         }
@@ -450,8 +450,8 @@ END AS IsAssignedToAllModules
 
     function getManagers()
     {
-        $query = "SELECT s.StaffID ,s.StaffName from staff s join 
-        setting_designation d on s.DesignationID = d.DesignationID where 
+        $query = "SELECT s.StaffID ,s.StaffName from Staff s join 
+        Setting_Designation d on s.DesignationID = d.DesignationID where 
         d.DesignationName = 'manager';";
         $res = DBController::getDataSet($query);
         if ($res) {
@@ -517,8 +517,8 @@ END AS IsAssignedToAllModules
     }
     function showProjectCoordinatorName()
     {
-        $query = "SELECT s.StaffID,s.StaffName FROM staff s
-        JOIN setting_designation d ON s.DesignationID = d.DesignationID 
+        $query = "SELECT s.StaffID,s.StaffName FROM Staff s
+        JOIN Setting_Designation d ON s.DesignationID = d.DesignationID 
         WHERE d.DesignationID IN (7,8,9,10);";
         $res = DBController::getDataSet($query);
         if ($res) {
@@ -536,7 +536,7 @@ END AS IsAssignedToAllModules
             array(":ModulePriority", $data['ModulePriority']),
             array(":ReportManagerID", $data['ReportManager'])
         );
-        $query = "INSERT INTO projectmodule(ModuleName, ModuleDescription, ModulePriority, ProjectID
+        $query = "INSERT INTO ProjectModule(ModuleName, ModuleDescription, ModulePriority, ProjectID
         ,ReportManagerStaffID, Planning,Designing,Development,Testing,Deployment
         ,UpdatedDate)values(:ModuleName,:ModuleDescription,:ModulePriority,:ProjectID,
         :ReportManagerID,0,0,0,0,0,now());";
@@ -552,7 +552,7 @@ END AS IsAssignedToAllModules
         $params = array(
             array(":ProjectID", Sodium::safeDecrypt($data['ProjectID']))
         );
-        $query = "SELECT ProjectModuleID,ModuleName, ModuleDescription,ModulePriority,isCompleted from projectmodule where ProjectID = :ProjectID";
+        $query = "SELECT ProjectModuleID,ModuleName, ModuleDescription,ModulePriority,isCompleted,Planning,Designing, Development, Testing from ProjectModule where ProjectID = :ProjectID";
         $res = DBController::getDataSet($query, $params);
         if ($res) {
             return array("return_code" => true, "return_data" => $res);
@@ -564,7 +564,7 @@ END AS IsAssignedToAllModules
     function removeModuleByModuleID($data)
     {
         $params = array(array("ModuleID", $data['ProjectModuleID']));
-        $query = "DELETE FROM projectmodule WHERE ProjectModuleID = :ModuleID";
+        $query = "DELETE FROM ProjectModule WHERE ProjectModuleID = :ModuleID";
         $res = DBController::ExecuteSQL($query, $params);
         if ($res) {
             return array("return_code" => true, "return_data" => "Module removed successfully");
@@ -578,9 +578,9 @@ END AS IsAssignedToAllModules
         $field = $data['field'];
         $params = array(
             array(':ProjectModuleID', $data['ModuleID']),
-            array(':newValue', $data['newValue']),
+            array(':newValue', number_format($data['newValue'])),
         );
-        $query = "UPDATE projectmodule SET $field = :newValue WHERE ProjectModuleID = :ProjectModuleID;";
+        $query = "UPDATE ProjectModule SET $field = :newValue WHERE ProjectModuleID = :ProjectModuleID;";
         $res = DBController::ExecuteSQL($query, $params);
         if ($res) {
             return array("return_code" => true, "return_data" => "Updated Successfully");

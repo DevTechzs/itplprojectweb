@@ -245,9 +245,7 @@
 } */
 @keyframes animate {
   to {
-    stroke-dashoffset: calc(
-      (360.327 - (var(--overall-progress)) / 100 * 360.327)
-    );
+    stroke-dashoffset: var(--overall-progress);
   }
 }
 

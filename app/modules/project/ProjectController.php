@@ -76,6 +76,8 @@ class ProjectController implements Controller
                 return (new Task())->moduleMembersForTask($jsondata);
             case "calculateProjectProgress":
                 return (new Module())->calculateProjectProgress($jsondata);
+            case "getTaskForModule":
+                return (new Module())->getTaskForModule($jsondata);
             default:
                 // header('HTTP/1.1 401  Unauthorized Access');
                 // header("Status: 401 ");
