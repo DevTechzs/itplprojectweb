@@ -12,47 +12,45 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
-// let projectID = (url.searchParams.get("projectId"));
-// console.log(projectID);
-var xValues = ["Total Budget", "Total Spent", "total left"];
-let totalBudget = 300000;
-let totalSpent = 150000;
-let totalLeft = totalBudget - totalSpent;
-var yValues = [totalBudget, totalSpent, totalLeft, 50000];
-var barColors = ["#ff3300", "#3399ff", "#cc33ff"];
+    var xValues = ["Total Budget", "Total Spent", "total left"];
+    let totalBudget = 300000;
+    let totalSpent = 150000;
+    let totalLeft = totalBudget - totalSpent;
+    var yValues = [totalBudget, totalSpent, totalLeft, 50000];
+    var barColors = ["#ff3300", "#3399ff", "#cc33ff"];
 
-new Chart("myChart", {
-    type: "bar",
-    data: {
-        labels: xValues,
-        datasets: [{
-            backgroundColor: barColors,
-            data: yValues,
-            barPercentage: 0.3,
-            categoryPercentage: 0.2
-        }]
-    },
-    options: {
-        legend: {
-            display: false
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true,
-                    suggestedMax: 350000
-                },
-                gridLines: {
-                    color: "rgba(0, 0, 0, 0.1)"
-                }
-            }],
-            xAxes: [{
-                gridLines: {
-                    display: false
-                }
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues,
+                barPercentage: 0.3,
+                categoryPercentage: 0.2
             }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        suggestedMax: 350000
+                    },
+                    gridLines: {
+                        color: "rgba(0, 0, 0, 0.1)"
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            }
         }
-    }
 
-});
+    });
 </script>

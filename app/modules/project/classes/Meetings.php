@@ -13,7 +13,7 @@ class Meetings
 
     function storingFiles($data, $file, $res, $field)
     {
-        $extractLatestID = "SELECT MeetingID FROM projectmeetings ORDER BY MeetingID DESC LIMIT 1";
+        $extractLatestID = "SELECT MeetingID FROM ProjectMeetings ORDER BY MeetingID DESC LIMIT 1";
         $extractLatestIDResult = DBController::sendData($extractLatestID);
         if (is_array($extractLatestIDResult) && isset($extractLatestIDResult['MeetingID'])) {
             // Extract the value of "LetterID" and convert it to an integer
@@ -79,7 +79,7 @@ class Meetings
 
             $fp = fopen("../app/data/letters/" . $newfilename, "w+");
             if (fwrite($fp, ($filedata))) {
-                $q2 = "INSERT INTO meetingsdocuments (`DocumentPath`, `DocumentTitle`) VALUES (  :DocumentPath, :DocumentTitle);";
+                $q2 = "INSERT INTO MeetingsDocuments (`DocumentPath`, `DocumentTitle`) VALUES (  :DocumentPath, :DocumentTitle);";
                 $p2 = [
                     [":DocumentPath", $newfilename],
                     [":DocumentTitle", $file['filename']],
@@ -122,7 +122,7 @@ class Meetings
         ProjectMeetings PM
     LEFT JOIN 
         Staff S ON FIND_IN_SET(S.StaffID, PM.AttendeeStaffIDs)
-    INNER JOIN meetingsdocuments md on md.DocumentID = PM.MeetingDocumentID
+    INNER JOIN MeetingsDocuments md on md.DocumentID = PM.MeetingDocumentID
     WHERE 
         PM.ProjectID = :ProjectID
     GROUP BY 
@@ -145,7 +145,7 @@ class Meetings
             array("MeetingAttendees", implode(",", $data['MeetingsAttendes'])),
             // array("MeetingsReport", $data['MeetingsReport'])
         );
-        $query = "INSERT INTO projectmeetings(ProjectID, MeetingDescription, MeetingDate,
+        $query = "INSERT INTO ProjectMeetings(ProjectID, MeetingDescription, MeetingDate,
         AttendeeStaffIDs,Report)
         VALUES(:ProjectID, :MeetingDescription,NOW(),:MeetingAttendees,null)";
         $res = DBController::ExecuteSQL($query, $params);

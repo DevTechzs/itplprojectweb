@@ -121,7 +121,6 @@ function updateProjectField(field) {
     json.ProjectID = localStorage.getItem('itplappprojectid');
     json.newValue = $("#new" + field).val();
     json.field = field;
-    debugger;
     if (validateEditedProjectDetails(field, json.newValue)) {
         obj.JSON = json;
         SilentTransportCall(obj, onProjectTitleSuccess);
@@ -173,7 +172,7 @@ function onProjectTitleSuccess(rc) {
                 $(".saveChangesProjectDetails").modal("hide");
                 break;
             case "getManagers":
-                debugger;
+
                 loadSelect("#newManagerName", rc.return_data);
                 break;
             case "showProjectCoordinatorName":
@@ -262,12 +261,6 @@ function populateModalBody(data) {
         <div> <button class = "btn btn-primary projectDetails-btn-edit" type = "button" data-target="#editOneFieldModal">edit</button></div>
     </div>
     <div class="mb-4 border-bottom border-dark" style = "display:grid; grid-template-columns:0.5fr 2fr 0.2fr;">
-        <div class="label p-2">Workorder File Name:</div>
-        <div class="data p-2"><a href = 'file?type=letters&name=${data.DocumentPath}'><i class="fa fa-file-pdf" style="font-size: 24px;"></i>
-</a></div>
-        <div> <button class = "btn btn-primary projectDetails-btn-edit" type = "button" data-target="#editOneFieldModal">edit</button></div>
-    </div>
-    <div class="mb-4 border-bottom border-dark" style = "display:grid; grid-template-columns:0.5fr 2fr 0.2fr;">
         <div class="label p-2">Workorder Number:</div>
         <div class="data p-2"><b>${data.WorkorderNumber}</b></div>
         <div> <button class = "btn btn-primary projectDetails-btn-edit" type = "button" data-target="#editOneFieldModal">edit</button></div>
@@ -284,7 +277,6 @@ function populateModalBody(data) {
 // Event listener for edit buttons
 
 function validateEditedProjectDetails(field, value) {
-    debugger;
     const temp = "validate" + field;
     switch (temp) {
         case "validateProjectTitle":

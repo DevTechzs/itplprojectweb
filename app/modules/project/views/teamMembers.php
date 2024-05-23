@@ -131,7 +131,7 @@
 var SelectedModuleID;
 $(document).ready(function() {
     $('#addOrRemoveModule').change(function() {
-        debugger;
+
         var selectValue = $(this).val();
         if (selectValue == '0') { //Remove TeamMember
             $('#remove-module-remarks-label-id').css('display', 'block');
@@ -181,7 +181,7 @@ function getModulesForNotInStaff(StaffID) {
 }
 
 function editTeamMemberModule(StaffID) {
-    debugger;
+
     const obj = {
         Module: "Project",
         Page_key: "editTeamMemberModule"
@@ -203,7 +203,7 @@ function editTeamMemberModule(StaffID) {
     }
 
     obj.JSON = json;
-    // console.log(JSON.stringify(obj));
+
     SilentTransportCall(obj, onTeamMembersSuccess);
 }
 
@@ -314,7 +314,7 @@ function loadingAllTeamMembers(data) {
 }
 
 function callToGetModules(data) {
-    debugger;
+
     data = JSON.parse(unescape(data));
     getAllModulesOfMember(data.StaffID);
     $("#showTeamMemberModal").modal("show");
@@ -334,7 +334,8 @@ function addNewTeamMember(projectId) {
     json.StaffId = $("#new-team-member-select").val();
     json.ProjectModuleId = $("#modulesList").val();
     obj.JSON = json;
-    // console.log(JSON.stringify(obj));
+
+
     SilentTransportCall(obj, onTeamMembersSuccess);
 }
 
@@ -378,7 +379,6 @@ function getAllModulesOfMember(StaffID) {
         StaffID: StaffID
     }
     obj.JSON = json;
-    // console.log(JSON.stringify(obj));
     SilentTransportCall(obj, onTeamMembersSuccess);
 }
 

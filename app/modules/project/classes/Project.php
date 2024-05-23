@@ -229,7 +229,7 @@ class Project
         FROM Project p 
         LEFT JOIN Staff mr ON p.ManagerID = mr.StaffID 
         LEFT JOIN Staff pc ON p.ProjectCoordinatorStaffID = pc.StaffID 
-        inner join ProjectDocuments pd on pd.DocumentID = p.workOrderFileID 
+        left join ProjectDocuments pd on pd.DocumentID = p.workOrderFileID 
         WHERE p.ProjectID = :ProjectID";
 
         $res = DBController::sendData($query, $params);
@@ -393,9 +393,12 @@ END AS IsAssignedToAllModules
 
     function showStaffAllToAssignProject()
     {
+        // $query = "SELECT s.StaffID,s.StaffName, d.DesignationName FROM Staff s
+        // JOIN Setting_Designation d ON s.DesignationID = d.DesignationID 
+        // WHERE d.DesignationID IN (7,8,9,10);";
         $query = "SELECT s.StaffID,s.StaffName, d.DesignationName FROM Staff s
-        JOIN Setting_Designation d ON s.DesignationID = d.DesignationID 
-        WHERE d.DesignationID IN (7,8,9,10);";
+         JOIN Setting_Designation d ON s.DesignationID = d.DesignationID;";
+
         $res = DBController::getDataSet($query);
         if ($res) {
             return array("return_code" => true, "return_data" => $res);

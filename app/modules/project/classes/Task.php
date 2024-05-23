@@ -78,7 +78,7 @@ class Task
 
             $fp = fopen("../app/data/letters/" . $newfilename, "w+");
             if (fwrite($fp, ($filedata))) {
-                $q2 = "INSERT INTO taskdocuments (DocumentPath, DocumentTitle) VALUES (  :DocumentPath, :DocumentTitle);";
+                $q2 = "INSERT INTO TaskDocuments (DocumentPath, DocumentTitle) VALUES (  :DocumentPath, :DocumentTitle);";
                 $p2 = [
                     [":DocumentPath", $newfilename],
                     [":DocumentTitle", $file['filename']],
