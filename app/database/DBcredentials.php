@@ -1,5 +1,5 @@
 <?php
 
-static $username = "root";
-static $password = "";
-static $database = "itpl";
+static $username = "nearchive";
+static $password = "Techz-789*";
+static $database = "tz_clients";
