@@ -1,0 +1,5 @@
+
+
+24-05-24 12:59:42 :  SELECT `LeadsID`,`Name`,`SchoolGroupName`,`ContactNo`,`Email`,`Role`,`IPAddress`,`DeviceInfo` FROM `prayagedu_leads`  
+ [] 
+ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl.prayagedu_leads' doesn't exist

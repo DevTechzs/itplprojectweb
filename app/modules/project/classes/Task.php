@@ -266,7 +266,7 @@ class Task
         // $str = rtrim($str, ",");
         $integers = array_map('intval', explode(',', $str));
         $integers = implode(",", $integers);
-        $query = "SELECT StaffID, StaffName FROM staff WHERE StaffID IN ($integers)";
+        $query = "SELECT StaffID, StaffName FROM Staff WHERE StaffID IN ($integers)";
         $result = DBController::getDataSet($query);
         if ($result) {
             return array("return_code" => true, "return_data" => $result);

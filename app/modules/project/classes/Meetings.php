@@ -92,7 +92,7 @@ class Meetings
                         array(":DocumentId", rtrim($documentsIDs, ",")),
                         array(":MeetingID", $DocumentID)
                     );
-                    $query2 = "UPDATE projectmeetings SET $field =:DocumentId WHERE MeetingID =:MeetingID";
+                    $query2 = "UPDATE ProjectMeetings SET $field =:DocumentId WHERE MeetingID =:MeetingID";
                     $updateLeaveDoc = DBController::ExecuteSQL($query2, $param2);
                     if ($updateLeaveDoc) {
                         return array("return_code" => true, "return_data" => "Documents added successfully");
@@ -145,7 +145,7 @@ class Meetings
             // array("MeetingsReport", $data['MeetingsReport'])
         );
         $query = "INSERT INTO ProjectMeetings(ProjectID, MeetingDescription, MeetingDate,
-        AttendeeStaffIDs,Report)
+        AttendeeStaffIDs)
         VALUES(:ProjectID, :MeetingDescription,NOW(),:MeetingAttendees,null)";
         $res = DBController::ExecuteSQL($query, $params);
         if ($res) {
