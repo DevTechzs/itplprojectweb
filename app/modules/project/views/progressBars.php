@@ -446,6 +446,7 @@ function getProjectModules() {
 
 function loadModules(id, data, moduleIds) {
     let content = "";
+    console.log(data);
     debugger;
     data.map(item => {
         const moduleExists = moduleIds.includes(item.ProjectModuleID);
@@ -498,12 +499,7 @@ function modalToEditModule(moduleID, moduleName, moduleDescription, modulePriori
     getManagers();
 
 }
-let modulesCompleted;
-
-function filterProjectModules(modules, moduleIds) {
-    // Use the filter method to filter modules whose ProjectModuleID exists in moduleIds
-    return modules.filter(module => moduleIds.includes(module.ProjectModuleID));
-}
+let modulesCompleted = [];
 
 function onModuleSuccess(rc) {
     if (rc.return_code) {
@@ -616,6 +612,7 @@ function progressData(data) {
         Development: 0,
         Testing: 0
     });
+    debugger;
     const progressBars = [{
         element: $("#number"),
         maxPercentage: ((totalProgress.Planning + totalProgress.Designing + totalProgress.Development +
@@ -623,19 +620,23 @@ function progressData(data) {
         interval: 10
     }, {
         element: $("#planning-bar-number"),
-        maxPercentage: totalProgress.Planning / total_modules * 100,
+        maxPercentage: (totalProgress.Planning / total_modules * 100) ? totalProgress.Planning / total_modules *
+            100 : 1,
         interval: 10
     }, {
         element: $("#design-bar-number"),
-        maxPercentage: totalProgress.Designing / total_modules * 100,
+        maxPercentage: (totalProgress.Designing / total_modules * 100) ? totalProgress.Designing /
+            total_modules * 100 : 1,
         interval: 10
     }, {
         element: $("#development-bar-number"),
-        maxPercentage: totalProgress.Development / total_modules * 100,
+        maxPercentage: (totalProgress.Development / total_modules * 100) ? totalProgress.Development /
+            total_modules * 100 : 1,
         interval: 10
     }, {
         element: $("#testing-bar-number"),
-        maxPercentage: totalProgress.Testing / total_modules * 100,
+        maxPercentage: (totalProgress.Testing / total_modules * 100) ? totalProgress.Testing / total_modules *
+            100 : 1,
         interval: 10
     }];
 
