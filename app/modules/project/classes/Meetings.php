@@ -115,7 +115,6 @@ class Meetings
         PM.MeetingID,
         PM.MeetingDescription,
         PM.MeetingDate,
-        PM.Report,
         md.DocumentPath,
         GROUP_CONCAT(S.StaffName SEPARATOR ', ') AS AttendeeNames
     FROM 
@@ -126,7 +125,7 @@ class Meetings
     WHERE 
         PM.ProjectID = :ProjectID
     GROUP BY 
-        PM.MeetingID, PM.MeetingDescription, PM.MeetingDate, PM.Report;";
+        PM.MeetingID, PM.MeetingDescription, PM.MeetingDate;";
 
         $res = DBController::getDataSet($query, $params);
         if ($res) {
