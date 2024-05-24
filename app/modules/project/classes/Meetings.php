@@ -146,7 +146,7 @@ class Meetings
         );
         $query = "INSERT INTO ProjectMeetings(ProjectID, MeetingDescription, MeetingDate,
         AttendeeStaffIDs)
-        VALUES(:ProjectID, :MeetingDescription,NOW(),:MeetingAttendees,null)";
+        VALUES(:ProjectID, :MeetingDescription,NOW(),:MeetingAttendees)";
         $res = DBController::ExecuteSQL($query, $params);
         if ($res) {
             if ($meetingsReport) $this->storingFiles($data, $meetingsReport, $res, 'MeetingDocumentID');
