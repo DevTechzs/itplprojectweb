@@ -174,7 +174,7 @@ CREATE TABLE `Taskdocuments` (
 
 -- itpl.clients definition
 
-CREATE TABLE `clients` (
+CREATE TABLE `Clients` (
   `ClientID` int(11) NOT NULL,
   `ClientName` varchar(200) NOT NULL,
   `TelephoneNo` varchar(15) NOT NULL,
