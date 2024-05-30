@@ -8,86 +8,125 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
+
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                <!-- Dashboard -->
                 <li class="nav-item">
-                    <a href="dashboard" class="nav-link">
+                    <a href="home" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Dashboard 1</p>
+                        <p>Staff Dashboard</p>
                     </a>
                 </li>
-                <!-- project -->
-                <li class="nav-item has-treeview">
+
+              
+
+
+
+                <!-- Administration -->
+                <!-- <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fad fa-user-check"></i>
+                        <i class="fas fa-user"></i>
                         <p>
-                            Projects
+                            Admintration
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+
                     <ul class="nav nav-treeview">
-
                         <li class="nav-item">
-                            <a href="project-projectList" class="nav-link">
-                                <i class="fa fa-users nav-icon text-info"></i>
-                                <p>Project List </p>
+                            <a href="administration-notice" class="nav-link">
+                                <i class="fa fa-list "></i>
+                                <p>Notice</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="user-Login" class="nav-link">
-                                <i class="fa fa-users nav-icon text-info"></i>
-                                <p>User Login </p>
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-list "></i>
+                                <p>Leave</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="user-UserDashboard" class="nav-link">
-                                <i class="fa fa-users nav-icon text-info"></i>
-                                <p>User DashBoard </p>
-                            </a>
-                        </li>
+                        
                     </ul>
+                </li> -->
 
-                </li>
-                <!-- performance -->
+                <!-- Leave li start here -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fad fa-user-check"></i>
+                        <i class="fas fa-calendar-plus"></i>
                         <p>
-                            performance
-                            <i class="right fas fa-angle-left"></i>
+                            Leave
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        s
                         <li class="nav-item">
-                            <a href="performance-employeePerformance" class="nav-link">
-                                <i class="fa fa-users nav-icon text-info"></i>
-                                <p> employee performance </p>
+                            <a href="staff-staffleaverequest" class="nav-link">
+                                <i class="fas fa-plus"></i>
+                                <p>Request Leave</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="performance-departmentPerformance" class="nav-link">
-                                <i class="fa fa-users nav-icon text-info"></i>
-                                <p> performance of department </p>
-                            </a>
-                        </li>
-
+                      
                     </ul>
 
-                </li>
 
-                <!-- careers  -->
+                     <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="staff-userleavereport" class="nav-link">
+                                <i class="fas fa-file"></i>
+                                <p>My Leave Report</p>
+                            </a>
+                        </li>
+                      
+                    </ul>
+
+
+
+
+
+                </li>
+                <!-- Leave li ends here  -->
+
+
+   <!-- Task li start here -->
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-check"></i>
+                        <p>
+                           Task
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="staff-createtask" class="nav-link">
+                                <i class="fas fa-plus"></i>
+                                <p>Create Task</p>
+                            </a>
+                        </li>
+                      
+                        <li class="nav-item">
+                            <a href="staff-taskboard" class="nav-link">
+                                <i class="fas fa-plus"></i>
+                                <p>Task Board</p>
+                            </a>
+                        </li>
+                      
+                    </ul>
+                </li>
+                <!-- Task li ends here  -->
+                
+
+
 
                 <!-- logout -->
-                <li>
+                <!-- <li>
                     <a href="logout" class="nav-link btn btn-danger text-white text-left">
                         <i class="fas fa-lock nav-icon"></i>
                         <p class="">Logout</p>
                     </a>
-                </li>
+                </li> -->
 
             </ul>
         </nav>
@@ -119,7 +158,9 @@
 <!-- Toastr -->
 <script src="assets/admin/plugins/toastr/toastr.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+<script src="assets/js/CallService.js"></script>
 
+<script src="assets/js/commonfunctions.js"></script>
+<script src="assets/js/md5.js"></script>
 <!-- <script src="assets/js/index.js"></script> -->
