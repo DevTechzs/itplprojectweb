@@ -3,3 +3,29 @@
 24-05-24 12:59:42 :  SELECT `LeadsID`,`Name`,`SchoolGroupName`,`ContactNo`,`Email`,`Role`,`IPAddress`,`DeviceInfo` FROM `prayagedu_leads`  
  [] 
  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl.prayagedu_leads' doesn't exist
+
+28-05-24 05:41:10 : Unknown error type: [2] Undefined array key &quot;StaffID&quot;<br />
+  Fatal error on line 15 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\user\classes\User.php
+Aborting...<br />
+
+
+28-05-24 05:49:54 : SELECT s.StaffName from Staff s join Staff s join
+         ProjectStaffPassword ps on ps.StaffID = s.StaffID where s.emailID = :EmailID and ps.password = :StaffPassword; 
+ [[":EmailID","john.doe@example.com"],[":StaffPassword","12345"]] 
+ SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 's'
+
+29-05-24 03:13:23 : Reached request Login
+
+29-05-24 03:22:56 : Reached request Login
+
+29-05-24 03:23:10 : Reached request Login
+
+29-05-24 03:53:26 : Reached request Login
+
+29-05-24 04:04:14 : Reached request Login
+
+30-05-24 01:00:27 : Reached request Login
+
+30-05-24 01:20:31 : Reached request Login
+
+30-05-24 03:29:29 : Reached request Login

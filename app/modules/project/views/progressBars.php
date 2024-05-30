@@ -491,6 +491,7 @@
                     $("#addModuleModal").find("input,select,textarea").val('');
                     $("#addModuleModal").modal('hide');
                     getModulesByProjectID(localStorage.getItem('itplappprojectid'));
+                    calculateProjectProgress();
                     break;
                 case "getManagers":
                     loadSelect("#ReportManagerName", rc.return_data);
@@ -503,6 +504,7 @@
                 case "removeModuleByModuleID":
                     notify("success", rc.return_data);
                     loadModules("#projectModulesList", rc.return_data);
+                    calculateProjectProgress();
                     break;
                     debugger;
                 case "editProjectModuleDetails":

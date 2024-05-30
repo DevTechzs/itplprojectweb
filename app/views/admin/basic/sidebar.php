@@ -8,20 +8,17 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
                 <li class="nav-item">
                     <a href="dashboard" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard 1</p>
                     </a>
                 </li>
-
                 <!-- project -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -39,24 +36,21 @@
                                 <p>Project List </p>
                             </a>
                         </li>
-
-
                         <li class="nav-item">
-                            <a href="products-viewleads" class="nav-link">
+                            <a href="user-Login" class="nav-link">
                                 <i class="fa fa-users nav-icon text-info"></i>
-                                <p>Test List </p>
+                                <p>User Login </p>
                             </a>
                         </li>
-
-
-
-
-
-
+                        <li class="nav-item">
+                            <a href="user-UserDashboard" class="nav-link">
+                                <i class="fa fa-users nav-icon text-info"></i>
+                                <p>User DashBoard </p>
+                            </a>
+                        </li>
                     </ul>
 
                 </li>
-
                 <!-- performance -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">

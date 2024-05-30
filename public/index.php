@@ -56,6 +56,7 @@ use app\modules\products\ProductsController;
 use app\modules\supports\SupportController;
 use app\modules\supportTicket\SupportTicketController;
 use app\modules\project\ProjectController;
+use app\modules\user\UserController;
 //newly added
 use app\modules\careers\CareerController;
 use app\modules\supportTicket\classes\SupportTicket;
@@ -114,22 +115,18 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"])) 
             case "Careers":
                 $result = (new CareerController())->Route($data);
                 break;
-
             case "Project":
                 $result = (new ProjectController())->Route($data);
                 break;
-
-
-
-
+            case "User":
+                $result = (new UserController())->Route($data);
+                break;
             case "SupportTicket":
                 $result = (new SupportTicketController())->Route($data);
                 break;
             case "Staff": //added by dev on 19/01/24
                 $result = (new StaffController())->Route($data);
                 break;
-
-
             default:
                 $result = array("return_code" => false, "return_data" => array("Module key not found"));
                 session_destroy();
@@ -155,18 +152,12 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"])) 
             case "Auth":
                 $result = (new AuthenticationController())->Route($data);
                 break;
-
-
-
-
             default:
                 //$result = (new ProductsController())->Route($data);
                 $result = array("return_code" => false, "return_data" => array("Key not found"));
-
                 // $result = (new AuthenticationController)->Route($data);
                 break;
         }
-
         $result['Module'] = $data["Module"];
         $result['Page_key'] = $data["Page_key"];
     }
@@ -211,6 +202,9 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"])) 
         case "project":
             ProjectController::Views($page);
             break;
+        case "user":
+            UserController::Views($page);
+            break;
 
         case "file":
             FileController::File();
@@ -231,10 +225,6 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"])) 
         case "staff":
             StaffController::Views($page); //added by dev on 19/01/24
             break;
-
-
-
-
         case "logout":
             session_destroy();
             header('Location: login');
