@@ -4,8 +4,7 @@ namespace app\modules\project\classes;
 
 use app\database\DBController;
 use app\misc\Sodium;
-use app\modules\documents\classes\Documents;
-use app\database\Helper;
+
 
 class Module
 {

@@ -1,45 +1,1109 @@
 
 
-24-05-24 12:59:42 :  SELECT `LeadsID`,`Name`,`SchoolGroupName`,`ContactNo`,`Email`,`Role`,`IPAddress`,`DeviceInfo` FROM `prayagedu_leads`  
- [] 
- SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itpl.prayagedu_leads' doesn't exist
+26-06-24 08:13:26 : Reached request Login
 
-28-05-24 05:41:10 : Unknown error type: [2] Undefined array key &quot;StaffID&quot;<br />
-  Fatal error on line 15 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\user\classes\User.php
+26-06-24 08:14:33 : Reached request Login
+
+26-06-24 08:21:46 : SELECT DISTINCT s.StaffID, s.StaffName
+        FROM staff s
+        LEFT JOIN ProjectTeamMembers ptm ON s.StaffID = ptm.StaffID
+        WHERE ptm.ProjectModuleID IS NULL
+        OR ptm.ProjectModuleID NOT IN (
+            SELECT ProjectModuleID
+            FROM ProjectModule
+            WHERE ProjectID = :ProjectID
+        );
+         
+ [] 
+ SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':ProjectID
+        )' at line 8
+
+26-06-24 08:21:56 : SELECT DISTINCT s.StaffID, s.StaffName
+        FROM staff s
+        LEFT JOIN ProjectTeamMembers ptm ON s.StaffID = ptm.StaffID
+        WHERE ptm.ProjectModuleID IS NULL
+        OR ptm.ProjectModuleID NOT IN (
+            SELECT ProjectModuleID
+            FROM ProjectModule
+            WHERE ProjectID = :ProjectID
+        );
+         
+ [] 
+ SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':ProjectID
+        )' at line 8
+
+26-06-24 08:35:55 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
 Aborting...<br />
 
 
-28-05-24 05:49:54 : SELECT s.StaffName from Staff s join Staff s join
-         ProjectStaffPassword ps on ps.StaffID = s.StaffID where s.emailID = :EmailID and ps.password = :StaffPassword; 
- [[":EmailID","john.doe@example.com"],[":StaffPassword","12345"]] 
- SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 's'
+26-06-24 08:35:55 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
 
-29-05-24 03:13:23 : Reached request Login
 
-29-05-24 03:22:56 : Reached request Login
+26-06-24 08:35:55 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
 
-29-05-24 03:23:10 : Reached request Login
 
-29-05-24 03:53:26 : Reached request Login
+26-06-24 08:35:56 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
 
-29-05-24 04:04:14 : Reached request Login
 
-30-05-24 01:00:27 : Reached request Login
+26-06-24 08:35:56 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
 
-30-05-24 01:20:31 : Reached request Login
 
-30-05-24 03:29:29 : Reached request Login
+26-06-24 08:35:56 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
 
-30-05-24 04:31:54 : Reached request Login
 
-30-05-24 04:37:58 : Reached request Login
+26-06-24 08:35:56 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
 
-30-05-24 04:39:18 : Reached request Login
 
-30-05-24 04:45:27 : Reached request Login
+26-06-24 08:35:56 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
 
-30-05-24 04:45:46 : Reached request Login
 
-30-05-24 04:46:32 : Reached request Login
+26-06-24 08:35:56 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
 
-30-05-24 04:46:52 : Reached request Login
+
+26-06-24 08:35:56 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:57 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:58 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:58 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:58 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:58 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:58 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:58 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:58 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:59 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:35:59 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:19 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:19 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:19 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:19 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:20 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:21 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:22 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:22 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:22 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:22 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:22 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:22 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:22 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:22 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:24 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:24 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:24 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:39:24 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 520 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:39 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:39 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:39 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:39 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:39 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:41 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:46:43 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:59:15 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:59:15 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:59:15 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:59:17 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:59:17 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:59:17 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:59:18 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:59:18 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 08:59:18 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+26-06-24 09:03:25 : Reached request Login
+
+27-06-24 10:37:40 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:40 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:40 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:42 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:44 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:44 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:44 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:45 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:45 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:45 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:45 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:45 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:37:45 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 506 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 10:55:37 : Reached request Login
+
+27-06-24 11:13:11 : Reached request Login
+
+27-06-24 11:16:38 : Reached request Login
+
+27-06-24 01:14:57 : Reached request Login
+
+27-06-24 01:24:37 : INSERT INTO ProjectTeamMembers(StaffID,
+            ProjectModuleID, isRemoved, RemovedRemarks,
+            isActive)values(:StaffID,:ProjectModuleID,0,'',1) 
+ [[":StaffID","5"],[":ProjectModuleID",null]] 
+ SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'ProjectModuleID' cannot be null
+
+27-06-24 05:12:19 : SELECT s.StaffName
+FROM Staff s
+WHERE s.StaffID NOT IN (
+    SELECT ptm.StaffID
+    FROM ProjectTeamMembers ptm
+    INNER JOIN ProjectModule pm ON ptm.ProjectModuleID = pm.ProjectModuleID
+    WHERE pm.ProjectID = :ProjectID-- Project A
+); 
+ [] 
+ SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':ProjectID-- Project A
+)' at line 7
+
+27-06-24 05:12:25 : SELECT s.StaffName
+FROM Staff s
+WHERE s.StaffID NOT IN (
+    SELECT ptm.StaffID
+    FROM ProjectTeamMembers ptm
+    INNER JOIN ProjectModule pm ON ptm.ProjectModuleID = pm.ProjectModuleID
+    WHERE pm.ProjectID = :ProjectID-- Project A
+); 
+ [] 
+ SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':ProjectID-- Project A
+)' at line 7
+
+27-06-24 05:29:32 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:29:36 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:29:44 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:31:16 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:31:18 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:33:07 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:33:13 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:34:48 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:36:23 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:36:36 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:37:59 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:38:27 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:42:59 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:50:24 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:50:32 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:57:52 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:58:57 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 05:59:27 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:01:14 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:04:13 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:05:06 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:05:23 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:08:32 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:09:35 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:11:23 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:12:16 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:12:17 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:12:19 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:12:31 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:12:33 : INSERT into projectteammembers(StaffID, ProjectModuleID, AddedDate, isRemoved, isActive) 
+                VALUES(:StaffID, :newProjectModuleId, now(), 0, 1) 
+ [[":StaffID",2],[":newProjectModuleId","-1"]] 
+ SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`itpl`.`projectteammembers`, CONSTRAINT `projectteammembers_ibfk_2` FOREIGN KEY (`ProjectModuleID`) REFERENCES `projectmodule` (`ProjectModuleID`))
+
+27-06-24 06:13:05 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:13:20 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:13:28 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:10 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:10 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:10 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:10 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:10 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:10 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:10 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:12 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:12 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:12 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:12 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:12 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:12 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:12 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:14 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:14 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:14 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:14 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:14 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:14 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:14:14 : Unknown error type: [2] Undefined array key &quot;removeRemarks&quot;<br />
+  Fatal error on line 518 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:16:16 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:16:25 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 06:19:10 : Unknown error type: [2] Undefined array key &quot;IsAssignedToAllModules&quot;<br />
+  Fatal error on line 304 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 07:53:14 : UPDATE ProjectModule SET Development = :newValue 
+            DevelopmentCompletionDate = CURRENT_TIME()
+            WHERE ProjectModuleID = :ProjectModuleID; 
+ [[":ProjectModuleID","5"],[":newValue","1"]] 
+ SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DevelopmentCompletionDate = CURRENT_TIME()
+            WHERE ProjectModuleID...' at line 2
+
+27-06-24 11:35:06 : Unknown error type: [2] Undefined variable $data<br />
+  Fatal error on line 596 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 11:46:32 : Unknown error type: [2] Undefined array key 0<br />
+  Fatal error on line 608 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 11:47:03 : Unknown error type: [2] Undefined array key 0<br />
+  Fatal error on line 608 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 11:49:18 : Unknown error type: [2] Undefined array key 0<br />
+  Fatal error on line 610 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 11:49:57 : Unknown error type: [2] Undefined array key &quot;$filteredArray[0]&quot;<br />
+  Fatal error on line 610 in file E:\study\xampp\htdocs\itplprojectweb\app\modules\project\classes\Project.php
+Aborting...<br />
+
+
+27-06-24 11:58:12 : select Planning, Designing, Development, Testing,from projectmodule p where ProjectModuleID =:ProjectModuleID; 
+ [["ProjectModuleID","4"]] 
+ SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'from projectmodule p where ProjectModuleID ='4'' at line 1
+
+28-06-24 12:12:39 : UPDATE ProjectModule SET Designing = :newValue, 
+            DesigningCompletionDate = CURRENT_TIME()
+            WHERE ProjectModuleID = :ProjectModuleID; 
+ [[":ProjectModuleID","5"],[":newValue","1"]] 
+ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DesigningCompletionDate' in 'field list'
+
+28-06-24 12:12:43 : UPDATE ProjectModule SET Designing = :newValue, 
+            DesigningCompletionDate = CURRENT_TIME()
+            WHERE ProjectModuleID = :ProjectModuleID; 
+ [[":ProjectModuleID","5"],[":newValue","1"]] 
+ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DesigningCompletionDate' in 'field list'
+
+28-06-24 12:30:12 : UPDATE ProjectModule SET Designing = :newValue, 
+            DesigningCompletionDate = CURRENT_TIME()
+            WHERE ProjectModuleID = :ProjectModuleID; 
+ [[":ProjectModuleID","5"],[":newValue","1"]] 
+ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DesigningCompletionDate' in 'field list'
+
+28-06-24 07:29:29 : SELECT ProjectModuleID,ModuleName, ModuleDescription,ModulePriority,isCompleted,Planning,Designing, Development, Testing,
+        PlaniningCompletionDate,DesigningCompletionDate,DevelopmentCompletionDate,TestingCompletionDate
+         from ProjectModule where ProjectID = :ProjectID 
+ [[":ProjectID","2"]] 
+ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PlaniningCompletionDate' in 'field list'
+
+28-06-24 07:29:30 : SELECT ProjectModuleID,ModuleName, ModuleDescription,ModulePriority,isCompleted,Planning,Designing, Development, Testing,
+        PlaniningCompletionDate,DesigningCompletionDate,DevelopmentCompletionDate,TestingCompletionDate
+         from ProjectModule where ProjectID = :ProjectID 
+ [[":ProjectID","2"]] 
+ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PlaniningCompletionDate' in 'field list'
+
+28-06-24 07:30:00 : SELECT ProjectModuleID,ModuleName, ModuleDescription,ModulePriority,isCompleted,Planning,Designing, Development, Testing,
+        PlaniningCompletionDate,DesigningCompletionDate,DevelopmentCompletionDate,TestingCompletionDate
+         from ProjectModule where ProjectID = :ProjectID 
+ [[":ProjectID","2"]] 
+ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PlaniningCompletionDate' in 'field list'
+
+30-06-24 04:09:18 : SELECT t.TaskID, t.TaskTitle, t.TaskDescription, t.ProjectModuleID, GROUP_CONCAT(st.StaffName) AS AssignedToStaffNames,
+       t.TaskStatus, t.DueDate, td.DocumentPath
+        FROM Task t
+        INNER JOIN ProjectModule pm ON t.ProjectModuleID = pm.ProjectModuleID
+        INNER JOIN Project p ON pm.ProjectID = p.ProjectID
+        INNER JOIN Staff st ON FIND_IN_SET(st.StaffID, t.AssignedToStaffIDs)
+        LEFT JOIN TaskDocuments td ON td.DocumentID = t.DocumentID
+        WHERE t.ProjectModuleID = 4
+        GROUP BY t.TaskID, t.TaskTitle, t.TaskDescription, t.ProjectModuleID, t.TaskStatus, t.DueDate, td.DocumentPath;
+         
+ [["ModuleID","4"]] 
+ SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+
+30-06-24 04:47:58 : SELECT pm.ProjectModuleID, pm.ModuleName, pm.ModuleDescription,pm.ModulePriority,pm.isCompleted,
+    pm.Planning,pm.Designing,pm.Development, pm.Testing,pm.PlanningCompletionDate,pm.DesigningCompletionDate,
+    pm.DevelopmentCompletionDate,pm.TestingCompletionDate,pm.ProjectModuleDueDate, pm.CompletionDate
+    s.StaffName  from ProjectModule pm inner join staff s on pm.ReportManagerStaffID  = s.StaffID where ProjectID = :ProjectID 
+ [[":ProjectID","2"]] 
+ SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.StaffName  from ProjectModule pm inner join staff s on pm.ReportManagerStaff...' at line 4
+
+30-06-24 04:47:59 : SELECT pm.ProjectModuleID, pm.ModuleName, pm.ModuleDescription,pm.ModulePriority,pm.isCompleted,
+    pm.Planning,pm.Designing,pm.Development, pm.Testing,pm.PlanningCompletionDate,pm.DesigningCompletionDate,
+    pm.DevelopmentCompletionDate,pm.TestingCompletionDate,pm.ProjectModuleDueDate, pm.CompletionDate
+    s.StaffName  from ProjectModule pm inner join staff s on pm.ReportManagerStaffID  = s.StaffID where ProjectID = :ProjectID 
+ [[":ProjectID","2"]] 
+ SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.StaffName  from ProjectModule pm inner join staff s on pm.ReportManagerStaff...' at line 4
+
+30-06-24 04:48:21 : SELECT pm.ProjectModuleID, pm.ModuleName, pm.ModuleDescription,pm.ModulePriority,pm.isCompleted,
+    pm.Planning,pm.Designing,pm.Development, pm.Testing,pm.PlanningCompletionDate,pm.DesigningCompletionDate,
+    pm.DevelopmentCompletionDate,pm.TestingCompletionDate,pm.ProjectModuleDueDate, pm.CompletionDate
+    s.StaffName  from ProjectModule pm inner join staff s on pm.ReportManagerStaffID  = s.StaffID where ProjectID = :ProjectID 
+ [[":ProjectID","2"]] 
+ SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.StaffName  from ProjectModule pm inner join staff s on pm.ReportManagerStaff...' at line 4

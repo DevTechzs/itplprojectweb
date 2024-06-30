@@ -39,15 +39,12 @@
     </style> -->
 
     <style>
-        @media print {
-            footer {
-                display: none !important;
-            }
+    @media print {
+        footer {
+            display: none !important;
         }
+    }
     </style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-
-    
+<body>

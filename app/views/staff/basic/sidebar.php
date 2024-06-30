@@ -19,114 +19,30 @@
                         <p>Staff Dashboard</p>
                     </a>
                 </li>
-
-              
-
-
-
-                <!-- Administration -->
-                <!-- <li class="nav-item has-treeview">
+                <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="fas fa-user"></i>
+                        <i class="nav-icon fad fa-user-check"></i>
                         <p>
-                            Admintration
+                            Projects
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="administration-notice" class="nav-link">
-                                <i class="fa fa-list "></i>
-                                <p>Notice</p>
+                            <a href="user-projects" class="nav-link">
+                                <i class="fa fa-users nav-icon text-info"></i>
+                                <p>My Projects </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa fa-list "></i>
-                                <p>Leave</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </li> -->
-
-                <!-- Leave li start here -->
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-calendar-plus"></i>
-                        <p>
-                            Leave
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="staff-staffleaverequest" class="nav-link">
-                                <i class="fas fa-plus"></i>
-                                <p>Request Leave</p>
-                            </a>
-                        </li>
-                      
-                    </ul>
-
-
-                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="staff-userleavereport" class="nav-link">
-                                <i class="fas fa-file"></i>
-                                <p>My Leave Report</p>
-                            </a>
-                        </li>
-                      
-                    </ul>
-
-
-
-
-
-                </li>
-                <!-- Leave li ends here  -->
-
-
-   <!-- Task li start here -->
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-check"></i>
-                        <p>
-                           Task
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="staff-createtask" class="nav-link">
-                                <i class="fas fa-plus"></i>
-                                <p>Create Task</p>
-                            </a>
-                        </li>
-                      
-                        <li class="nav-item">
-                            <a href="staff-taskboard" class="nav-link">
-                                <i class="fas fa-plus"></i>
-                                <p>Task Board</p>
-                            </a>
-                        </li>
-                      
                     </ul>
                 </li>
-                <!-- Task li ends here  -->
-                
+                <!-- logout --> -->
 
-
-
-                <!-- logout -->
-                <!-- <li>
-                    <a href="logout" class="nav-link btn btn-danger text-white text-left">
-                        <i class="fas fa-lock nav-icon"></i>
-                        <p class="">Logout</p>
-                    </a>
-                </li> -->
+                <a href="logout" class="nav-link btn btn-danger text-white text-left">
+                    <i class="fas fa-lock nav-icon"></i>
+                    <p class="">Logout</p>
+                </a>
+                </li>
 
             </ul>
         </nav>
@@ -158,7 +74,8 @@
 <!-- Toastr -->
 <script src="assets/admin/plugins/toastr/toastr.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js">
+</script>
 <script src="assets/js/CallService.js"></script>
 
 <script src="assets/js/commonfunctions.js"></script>

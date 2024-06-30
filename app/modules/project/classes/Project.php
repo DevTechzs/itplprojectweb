@@ -275,41 +275,52 @@ class Project
             array(":StaffID", $data['StaffID'])
         );
 
-        $query = "SELECT CASE 
-    WHEN (
-        SELECT COUNT(*) 
-        FROM ProjectModule 
-        WHERE ProjectID = :ProjectID
-    ) = (
-        SELECT COUNT(DISTINCT ptm.ProjectModuleID) 
-        FROM ProjectTeamMembers ptm
-        WHERE ptm.StaffID = :StaffID
-        AND ptm.isRemoved = 0
-    ) THEN 'yes'
-    ELSE 'no'
-END AS IsAssignedToAllModules
+        //         $query = "SELECT CASE 
+        //     WHEN (
+        //         SELECT COUNT(*) 
+        //         FROM ProjectModule 
+        //         WHERE ProjectID = :ProjectID
+        //     ) = (
+        //         SELECT COUNT(DISTINCT ptm.ProjectModuleID) 
+        //         FROM ProjectTeamMembers ptm
+        //         WHERE ptm.StaffID = :StaffID
+        //         AND ptm.isRemoved = 0
+        //     ) THEN 'yes'
+        //     ELSE 'no'
+        // END AS IsAssignedToAllModules
+        // ";
+
+        $query = "SELECT pm.ProjectModuleID, pm.ModuleName
+FROM ProjectModule pm
+WHERE pm.ProjectID = :ProjectID -- Project A
+AND pm.ProjectModuleID NOT IN (
+    SELECT ptm.ProjectModuleID
+    FROM ProjectTeamMembers ptm
+    WHERE ptm.StaffID = :StaffID-- Replace with the specific StaffID
+    AND ptm.isRemoved = 0 -- Staff is not removed
+);
 ";
-        $res = DBController::sendData($query, $params);
-        if ($res['IsAssignedToAllModules'] == "yes") {
+        $res = DBController::getDataSet($query, $params);
+        // if ($res['IsAssignedToAllModules'] == "yes") {
+        //     return array("return_code" => true, "return_data" => $res);
+        // } else {
+        //     $q  = "SELECT pm.ProjectModuleID, pm.ModuleName
+        //     FROM ProjectModule pm
+        //     WHERE pm.ProjectID = :ProjectID AND NOT EXISTS (
+        //         SELECT 1
+        //         FROM ProjectTeamMembers ptm
+        //         WHERE ptm.ProjectModuleID = pm.ProjectModuleID
+        //         AND ptm.StaffID = :StaffID
+        //         AND ptm.isRemoved = 0
+        //     )
+        //     ";
+        // $result = DBController::getDataSet($q, $params);
+        if ($res) {
             return array("return_code" => true, "return_data" => $res);
         } else {
-            $q  = "SELECT pm.ProjectModuleID, pm.ModuleName
-            FROM ProjectModule pm
-            WHERE pm.ProjectID = :ProjectID AND NOT EXISTS (
-                SELECT 1
-                FROM ProjectTeamMembers ptm
-                WHERE ptm.ProjectModuleID = pm.ProjectModuleID
-                AND ptm.StaffID = :StaffID
-                AND ptm.isRemoved = 0
-            )
-            ";
-            $result = DBController::getDataSet($q, $params);
-            if ($result) {
-                return array("return_code" => true, "return_data" => $result);
-            } else {
-                return array("return_code" => false, "return_data" => "Update failed");
-            }
+            return array("return_code" => false, "return_data" => "Update failed");
         }
+        // }
     }
     function getTeamMembers($data)
     {
@@ -375,15 +386,16 @@ END AS IsAssignedToAllModules
         // );
         // ";
 
-        $query = "SELECT s.StaffID, s.StaffName
-        FROM Staff s
-        WHERE NOT EXISTS (
-            SELECT 1
-            FROM ProjectTeamMembers ptm
-            WHERE ptm.StaffID = s.StaffID
-            AND ptm.isRemoved = 0
-        );";
-        $res = DBController::getDataSet($query);
+        $query = "SELECT s.staffID ,s.StaffName
+FROM Staff s
+WHERE s.StaffID NOT IN (
+    SELECT ptm.StaffID
+    FROM ProjectTeamMembers ptm
+    INNER JOIN ProjectModule pm ON ptm.ProjectModuleID = pm.ProjectModuleID
+    WHERE pm.ProjectID = :ProjectID
+    and ptm.isRemoved = 0-- Project A
+);";
+        $res = DBController::getDataSet($query, $params);
         if ($res) {
             return array("return_code" => true, "return_data" => $res);
         } else {
@@ -555,7 +567,10 @@ END AS IsAssignedToAllModules
         $params = array(
             array(":ProjectID", Sodium::safeDecrypt($data['ProjectID']))
         );
-        $query = "SELECT ProjectModuleID,ModuleName, ModuleDescription,ModulePriority,isCompleted,Planning,Designing, Development, Testing from ProjectModule where ProjectID = :ProjectID";
+        $query = "SELECT pm.ProjectModuleID, pm.ModuleName, pm.ModuleDescription,pm.ModulePriority,pm.isCompleted,
+    pm.Planning,pm.Designing,pm.Development, pm.Testing,pm.PlanningCompletionDate,pm.DesigningCompletionDate,
+    pm.DevelopmentCompletionDate,pm.TestingCompletionDate,pm.ProjectModuleDueDate, pm.CompletionDate,
+    s.StaffName  from ProjectModule pm inner join staff s on pm.ReportManagerStaffID  = s.StaffID where ProjectID = :ProjectID";
         $res = DBController::getDataSet($query, $params);
         if ($res) {
             return array("return_code" => true, "return_data" => $res);
@@ -579,12 +594,42 @@ END AS IsAssignedToAllModules
     function editProjectModuleDetails($data)
     {
         $field = $data['field'];
-        $params = array(
+        $params1 = array(
             array(':ProjectModuleID', $data['ModuleID']),
-            array(':newValue', number_format($data['newValue'])),
+            array(':newValue', ($data['newValue'])),
         );
-        $query = "UPDATE ProjectModule SET $field = :newValue WHERE ProjectModuleID = :ProjectModuleID;";
-        $res = DBController::ExecuteSQL($query, $params);
+        $fieldDate = $field . "CompletionDate";
+        $query = "";
+
+        if ($data['newValue'] == "1") {
+            $query = "UPDATE ProjectModule SET $field = :newValue, 
+            $fieldDate = CURRENT_TIME()
+            WHERE ProjectModuleID = :ProjectModuleID;";
+        } else {
+            $query = "UPDATE ProjectModule SET $field = :newValue 
+            WHERE ProjectModuleID = :ProjectModuleID;";
+        }
+
+        $res = DBController::ExecuteSQL($query, $params1);
+
+        $params2 = array(array(
+            'ProjectModuleID', $data['ModuleID']
+        ));
+        $getPhasesQuery = "SELECT Planning, Designing, Development, Testing from projectmodule p where ProjectModuleID =:ProjectModuleID;";
+        $PhasesData = DBController::sendData($getPhasesQuery, $params2);
+        if ($PhasesData['Planning'] && $PhasesData['Designing'] && $PhasesData['Development'] && $PhasesData['Testing']) {
+
+            $updateStatusQuery = "UPDATE ProjectModule SET isCompleted = 1,
+            CompletionDate = CURRENT_TIME()
+             WHERE ProjectModuleID = :ProjectModuleID;";
+            DBController::ExecuteSQL($updateStatusQuery, $params2);
+        } else {
+            $updateStatusQuery = "UPDATE ProjectModule SET isCompleted = 0,
+            CompletionDate = CURRENT_TIME()
+             WHERE ProjectModuleID = :ProjectModuleID;";
+            DBController::ExecuteSQL($updateStatusQuery, $params2);
+        }
+
         if ($res) {
             return array("return_code" => true, "return_data" => "Updated Successfully");
         } else {

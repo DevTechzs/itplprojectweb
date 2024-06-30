@@ -130,21 +130,21 @@
 <script>
 var SelectedModuleID;
 $(document).ready(function() {
+    debugger;
     $('#addOrRemoveModule').change(function() {
-
-        var selectValue = $(this).val();
-        if (selectValue == '0') { //Remove TeamMember
-            $('#remove-module-remarks-label-id').css('display', 'block');
-            $("#member-remove-remarks-text").css('display', 'block');
+        let selectValue = $(this).val();
+        if (selectValue == 0) { //Remove TeamMember
+            $('#remove-module-remarks-label-id').show(); //Remove
+            $("#member-remove-remarks-text").show()
             $("#ModulesToAdd").hide();
-            $("#modulesStaffIsIn").show();
             getAllModulesOfMember($("#removeStaffWithID").val());
-        } else {
-            $('#remove-module-remarks-label-id').css('display', 'none');
-            $("#member-remove-remarks-text").css('display', 'none');
+            $("#modulesStaffIsIn").show();
+        } else if (selectValue == 1) {
+            $('#remove-module-remarks-label-id').hide();
+            $("#member-remove-remarks-text").hide();
             $("#ModulesToAdd").show();
             $("#modulesStaffIsIn").hide();
-
+            getModulesForNotInStaff($("#removeStaffWithID").val())
         }
     });
 
@@ -168,6 +168,7 @@ $(function() {
 })
 
 function getModulesForNotInStaff(StaffID) {
+    debugger;
     const obj = {
         Module: "Project",
         Page_key: "getModulesForNotInStaff"
@@ -181,7 +182,7 @@ function getModulesForNotInStaff(StaffID) {
 }
 
 function editTeamMemberModule(StaffID) {
-
+    debugger;
     const obj = {
         Module: "Project",
         Page_key: "editTeamMemberModule"
@@ -265,7 +266,9 @@ function onTeamMembersSuccess(rc) {
                 showTeamMemberModules(rc.return_data);
                 loadSelect("#modulesStaffIsIn", rc.return_data);
                 break;
+
             case "getModulesForNotInStaff":
+                console.log(rc.return_data)
                 loadSelect("#ModulesToAdd", rc.return_data);
                 break;
             default:
@@ -369,7 +372,7 @@ function showTeamMemberModules(data) {
 
 
 function getAllModulesOfMember(StaffID) {
-
+    debugger;
     const obj = {
         Module: "Project",
         Page_key: "getAllModulesOfMember"
@@ -406,11 +409,11 @@ function openEditTeamMemberModal(StaffID) {
     // Open the modal using Bootstrap's modal() method
     $('#editTeamMember').modal('show');
     $("#removeStaffWithID").val(StaffID);
-    getModulesForNotInStaff(StaffID);
     $("#confirmEditTeamMember").click(() => {
         editTeamMemberModule(StaffID);
 
     })
+
 
 }
 </script>

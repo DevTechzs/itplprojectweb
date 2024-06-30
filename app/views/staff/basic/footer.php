@@ -29,78 +29,80 @@
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js"></script>
 
 <script>
-    $('.select2').select2();
+// $('.select2').select2();
 
-    function onError(rc) {
-        console.log(rc);
-    }
+function onError(rc) {
+    console.log(rc);
+}
 
-    $(function() {
-        // debugger;
-        let sess = JSON.parse(sessionStorage.getItem("session"));
-        if (sess!=null && sess.length>0)
-            loadSelect("#session",sess,false);
+$(function() {
+    // debugger;
+    let sess = JSON.parse(sessionStorage.getItem("session"));
+    if (sess != null && sess.length > 0)
+        loadSelect("#session", sess, false);
 
-        var url = window.location;
-        var title="";
-        // for single sidebar menu
-        title = $('ul.nav-sidebar a').filter(function () {
+    var url = window.location;
+    var title = "";
+    // for single sidebar menu
+    title = $('ul.nav-sidebar a').filter(function() {
             document.title = this.innerText;
             return this.href == url;
         }).addClass('active')
-            .text();
+        .text();
 
 
-        if (title!=undefined && title!=""){
-            document.title = (title.trim()).replace(/ +(?= )/g,'');
-        }
+    if (title != undefined && title != "") {
+        document.title = (title.trim()).replace(/ +(?= )/g, '');
+    }
 
-        // for sidebar menu and treeview
-        title = $('ul.nav-treeview a').filter(function () {
+    // for sidebar menu and treeview
+    title = $('ul.nav-treeview a').filter(function() {
 
             return this.href == url;
         }).parentsUntil(".nav-sidebar > .nav-treeview")
-            .css({'display': 'block'})
-            .addClass('menu-open').prev('a')
-            .addClass('active')
-            .text();
-            // .css("background-color", "rgb(94 114 228 / 38%)");
+        .css({
+            'display': 'block'
+        })
+        .addClass('menu-open').prev('a')
+        .addClass('active')
+        .text();
+    // .css("background-color", "rgb(94 114 228 / 38%)");
 
 
-        if (title!=undefined && title!=""){
-            document.title = (title.trim()).replace(/ +(?= )/g,'');
-        }
-    });
-
-    $("#session").change(function (){
-        let obj = {};
-        obj.Module = "Settings";
-        obj.Page_key = "changeSession";
-        let json = {};
-        json.SessionID=$("#session option:selected").val();
-        obj.JSON = json;
-        TransportCall(obj,onSucessMaster);
-    });
-
-    function onSucessMaster(rc) {
-        debugger;
-        if (rc.return_code) {
-            switch (rc.Page_key) {
-                case "changeSession":
-                    if(rc.return_data){
-                        notify('success',"Session Changed");
-                    }else {
-                        notify('error',"Could not change session");
-                    }
-                    break;
-                default:
-                    alert(rc.Page_key);
-            }
-        } else {
-            alert("Error");
-        }
-        // alert(JSON.stringify(args));
+    if (title != undefined && title != "") {
+        document.title = (title.trim()).replace(/ +(?= )/g, '');
     }
+});
+
+$("#session").change(function() {
+    let obj = {};
+    obj.Module = "Settings";
+    obj.Page_key = "changeSession";
+    let json = {};
+    json.SessionID = $("#session option:selected").val();
+    obj.JSON = json;
+    TransportCall(obj, onSucessMaster);
+});
+
+function onSucessMaster(rc) {
+    debugger;
+    if (rc.return_code) {
+        switch (rc.Page_key) {
+            case "changeSession":
+                if (rc.return_data) {
+                    notify('success', "Session Changed");
+                } else {
+                    notify('error', "Could not change session");
+                }
+                break;
+            default:
+                alert(rc.Page_key);
+        }
+    } else {
+        alert("Error");
+    }
+    // alert(JSON.stringify(args));
+}
 
 // for nav-link
 //     $("ul li a.nav-link").each(function() {
@@ -115,10 +117,6 @@
 //             }
 //         }
 //     });
-
-
-
-
 </script>
 </body>
 

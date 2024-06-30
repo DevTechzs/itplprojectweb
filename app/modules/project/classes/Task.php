@@ -173,7 +173,7 @@ class Task
         //  WHERE FIND_IN_SET(s.StaffID, (SELECT AssignedToStaffIDs FROM Task WHERE TaskId = :TaskID)) = 0 
         //  and ptm.ProjectModuleID = :ProjectModuleID and pm.ProjectID=:ProjectID;";
 
-        $query = "SELECT s.StaffID, s.StaffName FROM Staff s JOIN ProjectTeamMembers ptm ON s.StaffID = ptm.StaffID WHERE ptm.ProjectModuleID = :ProjectModuleID
+        $query = "SELECT Distinct s.StaffID, s.StaffName FROM Staff s JOIN ProjectTeamMembers ptm ON s.StaffID = ptm.StaffID WHERE ptm.ProjectModuleID = :ProjectModuleID
          AND ptm.isRemoved = 0 AND s.StaffID NOT IN ( SELECT t.AssignedFromStaffID FROM Task t WHERE t.ProjectModuleID =:ProjectModuleID  AND t.TaskId = :TaskID);";
 
         // $query = "SELECT distinct s.StaffID, s.StaffName FROM staff s JOIN ProjectTeamMembers ptm on
@@ -298,6 +298,24 @@ class Task
             return array("return_code" => true, "return_data" => $res);
         } else {
             return array("return_code" => false, "return_data" => "No Staff in the module");
+        }
+    }
+    function getTaskByModuleID($data)
+    {
+        $params = array(array('ModuleID', $data['ModuleID']));
+        $query = "SELECT t.TaskID, t.TaskTitle, t.TaskDescription, t.ProjectModuleID, GROUP_CONCAT(st.StaffName) AS AssignedToStaffNames,
+       t.TaskStatus, t.DueDate, td.DocumentPath
+        FROM Task t
+        INNER JOIN ProjectModule pm ON t.ProjectModuleID = pm.ProjectModuleID
+        INNER JOIN Project p ON pm.ProjectID = p.ProjectID
+        INNER JOIN Staff st ON FIND_IN_SET(st.StaffID, t.AssignedToStaffIDs)
+        LEFT JOIN TaskDocuments td ON td.DocumentID = t.DocumentID
+        WHERE t.ProjectModuleID = :ModuleID
+        GROUP BY t.TaskID, t.TaskTitle, t.TaskDescription, t.ProjectModuleID, t.TaskStatus, t.DueDate, td.DocumentPath;
+        ";
+        $res = DBController::getDataSet($query, $params);
+        if ($res) {
+            return array("return_code" => true, "return_data" => $res);
         }
     }
 }

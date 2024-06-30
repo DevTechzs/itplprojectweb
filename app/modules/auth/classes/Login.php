@@ -64,7 +64,7 @@ class Login
                     DBController::ExecuteSQL($query, $params);
                 }
 
-                return array("return_code" => true, "return_data" => array("Name" => $res['Name'], "Username" => $data['Username'], "EmailID" => $res['EmailID'], "SessionKey" => $sessionkey, "SessionExpiryDate" => $sessionkeyexpirydatetime->format('Y-m-d H:i:s'), "UserType" => $res['UserType'], "nextPage" => $nextpage));
+                return array("return_code" => true, "return_data" => array("StaffID" => $res['StaffID'], "Name" => $res['Name'], "Username" => $data['Username'], "EmailID" => $res['EmailID'], "SessionKey" => $sessionkey, "SessionExpiryDate" => $sessionkeyexpirydatetime->format('Y-m-d H:i:s'), "UserType" => $res['UserType'], "nextPage" => $nextpage));
             }
         }
         return array("return_code" => false, "return_data" =>  "Username or Password does not match");

@@ -103,26 +103,17 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"])) 
             case "Client":
                 $result = (new ClientController())->Route($data);
                 break;
-            case "Products":
-                $result = (new ProductsController())->Route($data);
-                break;
             case "file":
                 FileController::File();
                 break;
             case "Auth":
                 $result = (new AuthenticationController())->Route($data);
                 break;
-            case "Careers":
-                $result = (new CareerController())->Route($data);
-                break;
             case "Project":
                 $result = (new ProjectController())->Route($data);
                 break;
             case "User":
                 $result = (new UserController())->Route($data);
-                break;
-            case "SupportTicket":
-                $result = (new SupportTicketController())->Route($data);
                 break;
             case "Staff": //added by dev on 19/01/24
                 $result = (new StaffController())->Route($data);
@@ -140,10 +131,6 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"])) 
     } else {
 
         switch ($data["Module"]) {
-
-            case "Careers":
-                $result = (new CareerController())->Route($data);
-                break;
 
             case "file":
                 FileController::File();
@@ -195,9 +182,7 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"])) 
         case "clients":
             ClientController::Views($page);
             break;
-        case "products":
-            ProductsController::Views($page);
-            break;
+
 
         case "project":
             ProjectController::Views($page);
@@ -212,16 +197,12 @@ if (isset($data["Module"]) && isset($data["Page_key"]) && isset($data["JSON"])) 
         case "settings":
             SettingController::Views($page);
             break;
-        case "careers":
-            CareerController::Views($page);
-            break;
+
 
         case "supports":
             SupportController::Views($page);
             break;
-        case "supportTicket":
-            SupportTicketController::Views($page);
-            break;
+
         case "staff":
             StaffController::Views($page); //added by dev on 19/01/24
             break;

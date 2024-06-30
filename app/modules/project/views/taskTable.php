@@ -1,18 +1,21 @@
 <div class="second-child-2">
     <div class="team-member-head-div">
         <div class="team-member-text"><b>Task</b></div>
+
         <div class="see-all-btn-div">
-            <!-- <button type="button" class="see-all-btn" onclick="openAllTask()">
-                See All Task
-            </button> -->
+            <label>Search by module</label>
+            <select id="searchTaskByModule" class="form-control"></select>
         </div>
 
         <!-- add task modal below -->
         <div class="see-all-btn-div">
+
             <button type="button" class=" btn btn-default" onclick="openAddTask()">
                 <i class="fa fa-plus"></i>
             </button>
+
         </div>
+
         <!-- Modal -->
         <div id="addTask" class="team-members-modal ">
             <div class="modals-content" id="addTaskModal" style="overflow-y:scroll;">
@@ -93,7 +96,7 @@
     </div>
     <div class="table-container" style="max-height:400px;overflow-y: auto; ">
         <table class="table table-bordered" id="table">
-            <thead style="top:0; background-color:aliceblue; color:black;">
+            <thead style="top:0; background-color:aliceblue; color:black;" class="sticky-top">
                 <tr>
                     <th style="width: 10px;">#</th>
                     <th>Task</th>
@@ -236,6 +239,7 @@
             switch (rc.Page_key) {
                 case "getModulesByProjectID":
                     loadSelect("#ProjectModuleSelect", rc.return_data);
+                    loadSelect("#searchTaskByModule", rc.return_data);
                     loadSelect("#ModulesToAdd", rc.return_data);
                     loadSelect("#modulesList", rc.return_data); //this for the edit portion of teamMembers component
                     break;
@@ -253,6 +257,7 @@
                     seeAllProjectTaskByProjectID(localStorage.getItem('itplappprojectid')); //call this func to 
                     getTaskForModule();
                     getProjectModules();
+                    $('#searchTaskByModule').val("");
                     break;
                 case "seeAllProjectTaskByProjectID":
                     // loadTask(rc.return_data, (rc.return_data ? 4 : rc.return_data.length), "#table");
@@ -267,6 +272,7 @@
                     seeAllProjectTaskByProjectID(localStorage.getItem('itplappprojectid'));
                     getTaskForModule();
                     getProjectModules();
+                    $('#searchTaskByModule').val("");
                     break;
                 case "getStaffWithTaskID":
                     loadSelect("#StaffsInTask", rc.return_data);
@@ -276,6 +282,9 @@
                     $("#editTaskModal").find('input,select').val('');
                     $("#editTaskModal").modal('hide');
                     seeAllProjectTaskByProjectID(localStorage.getItem('itplappprojectid'));
+                    break;
+                case "getTaskByModuleID":
+                    loadTask(rc.return_data, rc.return_data.length, "#table");
                     break;
                 default:
                     notify("error", rc.Page_key);
@@ -329,6 +338,19 @@
 
 
     $(document).ready(function() {
+
+        $("#searchTaskByModule").change(function() {
+            const moduleID = $(this).val();
+            const obj = {
+                Module: "Project",
+                Page_key: "getTaskByModuleID"
+            }
+            const json = {
+                ModuleID: moduleID,
+            }
+            obj.JSON = json;
+            SilentTransportCall(obj, onTaskSuccess);
+        })
 
         $('#newTaskTitle').change(function() {
             var value = $(this).val();
@@ -535,6 +557,7 @@
 
 
     function loadTask(data, dataLength, tableId) {
+        debugger;
         let content = "";
         for (let i = 0; i < dataLength; i++) {
             content += `<tr> 

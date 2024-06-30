@@ -11,22 +11,31 @@ class UserController implements Controller
     {
         $jsondata = $data["JSON"];
         switch ($data["Page_key"]) {
-            case "UserLogin":
-                return (new User())->UserLogin($jsondata);
+            case "getProjectListOfStaff":
+                return (new User())->getProjectListOfStaff($jsondata);
+            case "getModulesOfStaff":
+                return (new User())->getModulesOfStaff($jsondata);
+            case "getModuleTask":
+                return (new User())->getModuleTask($jsondata);
+            case "updateTaskStatus":
+                return (new User())->updateTaskStatus($jsondata);
             default:
                 return array("return_code" => false, "return_data" => array("Page Key not found"));
         }
     }
-    public static function views($page)
+    public static function Views($page)
     {
         $viewpath = "../app/modules/user/views/";
 
         switch ($page[1]) {
-            case 'Login':
-                load($viewpath . "Login.php");
+            case "projects":
+                load($viewpath . "projects.php");
                 break;
-            case "UserDashboard":
-                load($viewpath . "UserDashboard.php");
+            case "projectDetails":
+                load($viewpath . "projectDetails.php");
+                break;
+            case "moduleTask":
+                load($viewpath . "moduleTask.php");
                 break;
             default:
                 // session_destroy();
